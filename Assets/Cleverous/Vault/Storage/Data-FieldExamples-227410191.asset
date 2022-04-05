@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dedf215c1821dc43ba82f2262d99e6d, type: 3}
+  m_Name: Data-FieldExamples-227410191
+  m_EditorClassIdentifier: 
+  Title: 'Field Example : 95189'
+  Description: 2147483647
+  StringDefault: Lorum Ipsum
+  IntegerDefault: 146
+  FloatDefault: -3.47
+  Vector2: {x: 1.44, y: -2.49}
+  Vector3: {x: 5.73, y: -3.86, z: 3.85}
+  Vector4: {x: -2.5, y: 4.56, z: 4.42, w: 11.13}
+  Rect:
+    serializedVersion: 2
+    x: 4.05
+    y: 1.38
+    width: 1.89
+    height: -2.28
+  Bounds:
+    m_Center: {x: -3.03, y: -0.38, z: 1.01}
+    m_Extent: {x: -4.26, y: -5.2, z: 1.38}
+  Color: {r: 0, g: 0, b: 0, a: 0}
+  AnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Enum: 0
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  IntegerRange: 54
+  FloatRange: 0.483
+  StringTextArea: Lorum Ipsum
+  StringMultiline: Lorum Ipsum
+  AssetDropdownField1: {fileID: 11400000, guid: ba882b34154046b44925d3d2d86aee98,
+    type: 2}
+  AssetDropdownField2: {fileID: 11400000, guid: 2ed850d8b471eb14abf7272c2e6f2717,
+    type: 2}
+  AssetDropdownField3: {fileID: 11400000, guid: ba882b34154046b44925d3d2d86aee98,
+    type: 2}
+  AssetDropdownFieldArray:
+  - {fileID: 11400000, guid: ae4a131d8dcf02c4aadedb89ec556bda, type: 2}
+  - {fileID: 11400000, guid: ba882b34154046b44925d3d2d86aee98, type: 2}
+  - {fileID: 11400000, guid: 123da85981c15e1408f1b50567894b13, type: 2}
+  - {fileID: 11400000}

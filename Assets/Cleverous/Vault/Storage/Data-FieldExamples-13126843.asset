@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dedf215c1821dc43ba82f2262d99e6d, type: 3}
+  m_Name: Data-FieldExamples-13126843
+  m_EditorClassIdentifier: 
+  Title: 'Field Example : 11528'
+  Description: 2147483647
+  StringDefault: lojuyfkhgtfhjg
+  IntegerDefault: 116
+  FloatDefault: 3.66
+  Vector2: {x: -3.13, y: 1.39}
+  Vector3: {x: 8.18, y: 4.83, z: 5.17}
+  Vector4: {x: 3, y: 3.76, z: 4.98, w: -3.18}
+  Rect:
+    serializedVersion: 2
+    x: -3.78
+    y: 5.9
+    width: -3.77
+    height: 6.26
+  Bounds:
+    m_Center: {x: -3.48, y: -3.28, z: -3.76}
+    m_Extent: {x: 8.64, y: 8.16, z: 5.91}
+  Color: {r: 1, g: 0, b: 0, a: 1}
+  AnimationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 1
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  Enum: 1
+  LayerMask:
+    serializedVersion: 2
+    m_Bits: 2
+  IntegerRange: 61
+  FloatRange: 0.466
+  StringTextArea: Lorum Ipsum
+  StringMultiline: Lorum Ipsum
+  AssetDropdownField1: {fileID: 11400000}
+  AssetDropdownField2: {fileID: 11400000, guid: 8a3b0049f75be34419eed8d0ab7734a9,
+    type: 2}
+  AssetDropdownField3: {fileID: 11400000, guid: ae4a131d8dcf02c4aadedb89ec556bda,
+    type: 2}
+  AssetDropdownFieldArray:
+  - {fileID: 11400000, guid: ae4a131d8dcf02c4aadedb89ec556bda, type: 2}
+  - {fileID: 11400000, guid: ae4a131d8dcf02c4aadedb89ec556bda, type: 2}
+  - {fileID: 11400000}
+  - {fileID: 11400000, guid: ba882b34154046b44925d3d2d86aee98, type: 2}
