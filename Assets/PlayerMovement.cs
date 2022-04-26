@@ -5,12 +5,16 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
-    [SerializeField] private bool flipped;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+
+    [SerializeField] private Transform leftLimit;
+    [SerializeField] private Transform rightLimit;
+
+    float xPos;
+    
+        [SerializeField] private bool flipped;
     [SerializeField] private bool sliding;
     [SerializeField] private bool attacking;
-
-    [SerializeField] private Rigidbody2D rb2D;
 
     [SerializeField] float slideSpeed;
     [SerializeField] float slideLength;
@@ -20,8 +24,6 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      spriteRenderer = GetComponent<SpriteRenderer>();
-      rb2D = gameObject.GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -29,30 +31,36 @@ public class PlayerMovement : MonoBehaviour
         if (!sliding)
             transform.Translate(new Vector3(moveVal.x, 0, 0) * moveSpeed * Time.deltaTime);
         //transform.position += new Vector3( (moveSpeed * Time.deltaTime * moveVal.x), 0, 0);
+
+        SetLimit();
+        FlipSprite();
     }
 
     void OnMove(InputValue value)
     {
-         moveVal = value.Get<Vector2>().normalized;
+        moveVal = value.Get<Vector2>().normalized;
+        if (moveVal.x < 0.9 && moveVal.x > -0.9)
+            moveVal.x = 0;
+    }
 
+    void SetLimit()
+    {
+        xPos = Mathf.Clamp(transform.position.x, leftLimit.position.x, rightLimit.position.x);
+        transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
+    }
+    void FlipSprite()
+    {
         if (!sliding)
         {
-            if (Mathf.Round(moveVal.x) == 1)
+            if (moveVal.x > 0)//Mathf.Round(moveVal.x) == 1)
             {
                 flipped = false;
             }
-            else if (Mathf.Round(moveVal.x) == -1)
+            else if (moveVal.x < 0)//Mathf.Round(moveVal.x) == -1)
             {
                 flipped = true;
             }
         }
-        
-       
-        FlipSprite();
-    }
-
-    void FlipSprite()
-    {
         spriteRenderer.flipX = flipped;
     }
 
@@ -65,25 +73,27 @@ public class PlayerMovement : MonoBehaviour
     {
         if (sliding) return;
         sliding = true;
-        StartCoroutine (Sliding());
+        while (sliding)
+        {
+            StartCoroutine(Sliding());
+            if (flipped)
+            {
+                transform.Translate(new Vector3(-slideSpeed, 0, 0) * moveSpeed * Time.deltaTime);
+                //rb2D.AddForce(-transform.right * slideSpeed);
+            }
+            else
+            {
+                transform.Translate(new Vector3(slideSpeed, 0, 0) * moveSpeed * Time.deltaTime);
+                //rb2D.AddForce(transform.right * slideSpeed);
+            }
+        }
     }
 
     IEnumerator Sliding()
     {
-        if (flipped)
-        {
-            rb2D.AddForce(-transform.right * slideSpeed);
-        }
-        else
-        {
-            rb2D.AddForce(transform.right * slideSpeed);
-        }
         yield return new WaitForSeconds(slideLength);
-        
-        rb2D.velocity = Vector3.zero;
-        rb2D.angularVelocity = 0;
-
         sliding = false;
     }
 
+    
 }
