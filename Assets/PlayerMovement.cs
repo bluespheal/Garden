@@ -11,15 +11,19 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform rightLimit;
 
     float xPos;
-    
-        [SerializeField] private bool flipped;
-    [SerializeField] private bool sliding;
-    [SerializeField] private bool attacking;
+    [SerializeField] private bool flipped;
+    [SerializeField] private int flippedInt;
+    public Animator animator;
 
-    [SerializeField] float slideSpeed;
-    [SerializeField] float slideLength;
     [SerializeField] Vector3 moveVal;
     [SerializeField] float moveSpeed;
+
+    [SerializeField] private bool sliding;
+    [SerializeField] float slideSpeed;
+    [SerializeField] float slideLength;
+    [SerializeField] GameObject slideHitbox;
+
+    [SerializeField] private bool attacking;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +32,17 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!sliding)
+        if(!sliding)
+        {
             transform.Translate(new Vector3(moveVal.x, 0, 0) * moveSpeed * Time.deltaTime);
-        //transform.position += new Vector3( (moveSpeed * Time.deltaTime * moveVal.x), 0, 0);
+        }
+
+        animator.SetFloat("Speed", Mathf.Abs(moveVal.x));
+
+        if (sliding)
+        {
+            transform.Translate(new Vector3(flippedInt, 0, 0) * slideSpeed * Time.deltaTime);
+        }
 
         SetLimit();
         FlipSprite();
@@ -38,9 +50,11 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove(InputValue value)
     {
+        
         moveVal = value.Get<Vector2>().normalized;
+
         if (moveVal.x < 0.9 && moveVal.x > -0.9)
-            moveVal.x = 0;
+            moveVal.x = 0; 
     }
 
     void SetLimit()
@@ -54,10 +68,12 @@ public class PlayerMovement : MonoBehaviour
         {
             if (moveVal.x > 0)//Mathf.Round(moveVal.x) == 1)
             {
+                flippedInt = 1;
                 flipped = false;
             }
             else if (moveVal.x < 0)//Mathf.Round(moveVal.x) == -1)
             {
+                flippedInt = -1;
                 flipped = true;
             }
         }
@@ -73,27 +89,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (sliding) return;
         sliding = true;
-        while (sliding)
-        {
-            StartCoroutine(Sliding());
-            if (flipped)
-            {
-                transform.Translate(new Vector3(-slideSpeed, 0, 0) * moveSpeed * Time.deltaTime);
-                //rb2D.AddForce(-transform.right * slideSpeed);
-            }
-            else
-            {
-                transform.Translate(new Vector3(slideSpeed, 0, 0) * moveSpeed * Time.deltaTime);
-                //rb2D.AddForce(transform.right * slideSpeed);
-            }
-        }
+        if (!animator.GetBool("Sliding"))
+            animator.SetBool("Sliding", true);
+        StartCoroutine(Sliding());
     }
 
     IEnumerator Sliding()
     {
+        slideHitbox.SetActive(true);
         yield return new WaitForSeconds(slideLength);
         sliding = false;
+        animator.SetBool("Sliding", false);
+        slideHitbox.SetActive(false);
     }
 
-    
+
 }
