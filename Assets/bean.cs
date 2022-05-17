@@ -52,7 +52,7 @@ public class bean : MonoBehaviour
     private void GenerateBean(int num)
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = sprites[num];
-        transform.localScale = transform.localScale * (1+(num*0.33f)); 
+        transform.localScale = transform.localScale * (0.5f+(num*0.33f)); 
     }
 
     private void OnTriggerEnter2D(Collider2D other)
