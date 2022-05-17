@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7893dd38573f7294ebb8f897cc8d949f
+guid: 08332d18152dab7479953ba563feb861
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -104,7 +104,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Millet_Master_0
+      name: Enemies_0
       rect:
         serializedVersion: 2
         x: 0
@@ -112,20 +112,20 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 048a1cef75e444b4aac5500fe263b8c5
-      internalID: -1735962717
+      spriteID: c82b3c5acf5a36a4891050557d3b9315
+      internalID: 582024015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_1
+      name: Enemies_1
       rect:
         serializedVersion: 2
         x: 96
@@ -133,20 +133,20 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1cebaf4a5a172f4cb9b48d2f8086cd4
-      internalID: -1610525547
+      spriteID: 97e6a61afc7665b428eb6ca3d5d5ca0b
+      internalID: -760489411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_2
+      name: Enemies_2
       rect:
         serializedVersion: 2
         x: 192
@@ -154,20 +154,20 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 931d3d043c29973428c90d7c05565aaa
-      internalID: 674490540
+      spriteID: 1990d23030bf8d34d98f6a378fb0c4ea
+      internalID: -1794917785
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_3
+      name: Enemies_3
       rect:
         serializedVersion: 2
         x: 288
@@ -175,83 +175,104 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0230d011368379b48a64f1628068f14b
-      internalID: -1035210997
+      spriteID: 81e97a23558ca0f43ac228aadad9835a
+      internalID: 1954180623
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_4
+      name: Enemies_4
       rect:
         serializedVersion: 2
         x: 0
         y: 192
-        width: 128
+        width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ca5a9b497eae0f42b745467d90b7f5c
-      internalID: 1246037951
+      spriteID: 4d189e1e00201ca45a6adde029de17a1
+      internalID: 327410703
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_5
+      name: Enemies_5
       rect:
         serializedVersion: 2
-        x: 128
+        x: 96
         y: 192
-        width: 134
+        width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc46e96cea62d84438659e4d1c24b2e7
-      internalID: -403301417
+      spriteID: f34847b1fb39bc14e8fc01ac3e1dd52e
+      internalID: -1225249015
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_6
+      name: Enemies_6
       rect:
         serializedVersion: 2
-        x: 263
+        x: 192
         y: 192
-        width: 121
+        width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20b330769c42bfe48b6b2440d844b925
-      internalID: -415383474
+      spriteID: d4064f82dede1fb4ab3ad63a716626f7
+      internalID: -1327109983
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_8
+      name: Enemies_7
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 192
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45b1fe1a2184383479b635f8607b53cd
+      internalID: -479935565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemies_8
       rect:
         serializedVersion: 2
         x: 0
@@ -259,20 +280,20 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8e6088c51eb4a541b563c2f1dfe3ed6
-      internalID: -13607037
+      spriteID: 2e9e0bbf087e0384ea20765e988fd58c
+      internalID: 781604069
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_9
+      name: Enemies_9
       rect:
         serializedVersion: 2
         x: 96
@@ -280,20 +301,20 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d7ba17c319e56b4bafc8e3424dad417
-      internalID: -275839823
+      spriteID: fe00c8f42c8e25b44804c8d87a5ae957
+      internalID: -860105486
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_10
+      name: Enemies_10
       rect:
         serializedVersion: 2
         x: 192
@@ -301,20 +322,20 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e7587c79fad48a4788c5a62755cd5d0
-      internalID: -1512527558
+      spriteID: ed0835d3919dc06459bcdda7262bda7f
+      internalID: -26800020
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_11
+      name: Enemies_11
       rect:
         serializedVersion: 2
         x: 288
@@ -322,20 +343,20 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b26d0ad11732ddb469897ad0d8c41469
-      internalID: 2051059997
+      spriteID: 2b4b6b1e35fc0144e8caf42e90bda34b
+      internalID: 1518987142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_12
+      name: Enemies_12
       rect:
         serializedVersion: 2
         x: 0
@@ -343,20 +364,20 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: beaee4faa82f5514a9c1739d64b3dcdb
-      internalID: 1430045625
+      spriteID: 942e307bbd1b0a54dac4335b55225d0b
+      internalID: 1029801642
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_13
+      name: Enemies_13
       rect:
         serializedVersion: 2
         x: 96
@@ -364,20 +385,20 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92140613aaaee39468f49860c7d5de07
-      internalID: 1631702861
+      spriteID: e9b071a82a4945e459b4abe50c1f8dc3
+      internalID: -2079122035
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_14
+      name: Enemies_14
       rect:
         serializedVersion: 2
         x: 192
@@ -385,20 +406,20 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8bcc8ee773f9c274fb73832750f685b3
-      internalID: -2065984023
+      spriteID: c9484daec2a9b3347a2c8de487e1e3ec
+      internalID: 358955971
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_Master_15
+      name: Enemies_15
       rect:
         serializedVersion: 2
         x: 288
@@ -406,14 +427,14 @@ TextureImporter:
         width: 96
         height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f56c3e3a3c51d3a4aa2ab1eb3e017d09
-      internalID: -149675951
+      spriteID: c49a40f8bdbaa6c46ac46503dfbb3389
+      internalID: -882689244
       vertices: []
       indices: 
       edges: []
@@ -429,22 +450,22 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Millet_Master_4: 1246037951
-      Millet_Master_0: -1735962717
-      Millet_Master_10: -1512527558
-      Millet_Master_6: -415383474
-      Millet_Master_12: 1430045625
-      Millet_Master_5: -403301417
-      Millet_Master_15: -149675951
-      Millet_Master_11: 2051059997
-      Millet_Master_9: -275839823
-      Millet_Master_2: 674490540
-      Millet_Master_1: -1610525547
-      Millet_Master_7: 1946070698
-      Millet_Master_3: -1035210997
-      Millet_Master_8: -13607037
-      Millet_Master_14: -2065984023
-      Millet_Master_13: 1631702861
+      Enemies_2: -1794917785
+      Enemies_3: 1954180623
+      Enemies_10: -26800020
+      Enemies_4: 327410703
+      Enemies_1: -760489411
+      Enemies_0: 582024015
+      Enemies_5: -1225249015
+      Enemies_15: -882689244
+      Enemies_12: 1029801642
+      Enemies_9: -860105486
+      Enemies_11: 1518987142
+      Enemies_6: -1327109983
+      Enemies_7: -479935565
+      Enemies_14: 358955971
+      Enemies_8: 781604069
+      Enemies_13: -2079122035
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

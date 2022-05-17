@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DashHit
   - Ball
+  - Enemy
   layers:
   - Default
   - TransparentFX

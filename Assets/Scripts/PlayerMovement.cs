@@ -24,6 +24,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject slideHitbox;
 
     [SerializeField] private bool attacking;
+    [SerializeField] public GameObject broom;
+    [SerializeField] public Animator broomAnimator;
+    [SerializeField] float attackLength;
+    [SerializeField] GameObject attackHitbox;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +36,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if(!sliding)
+        if (attacking)
+            return;
+
+        if (!sliding || !attacking)
         {
             transform.Translate(new Vector3(moveVal.x, 0, 0) * moveSpeed * Time.deltaTime);
         }
@@ -44,13 +51,14 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(new Vector3(flippedInt, 0, 0) * slideSpeed * Time.deltaTime);
         }
 
+        
+
         SetLimit();
         FlipSprite();
     }
 
     void OnMove(InputValue value)
     {
-        
         moveVal = value.Get<Vector2>().normalized;
 
         if (moveVal.x < 0.9 && moveVal.x > -0.9)
@@ -85,13 +93,30 @@ public class PlayerMovement : MonoBehaviour
         Slide();
     }
 
+    void OnAttack(InputValue value)
+    {
+        Attack();
+    }
+
     public void Slide()
     {
-        if (sliding) return;
+        if (sliding || attacking) return;
         sliding = true;
         if (!animator.GetBool("Sliding"))
             animator.SetBool("Sliding", true);
         StartCoroutine(Sliding());
+    }
+
+    public void Attack()
+    {
+        if (attacking || sliding) return;
+        attacking = true;
+        animator.SetTrigger("Attack");
+
+        broom.SetActive(true);
+        broomAnimator.SetTrigger("Broom");
+    
+        StartCoroutine(Attacking());
     }
 
     IEnumerator Sliding()
@@ -103,5 +128,13 @@ public class PlayerMovement : MonoBehaviour
         slideHitbox.SetActive(false);
     }
 
+    IEnumerator Attacking()
+    {
+        attackHitbox.SetActive(true);
+        yield return new WaitForSeconds(attackLength);
+        attacking = false;
+        attackHitbox.SetActive(false);
+        broom.SetActive(false);
+    }
 
 }

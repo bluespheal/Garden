@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 9d6176168bf47e144bce167d1bb31835
+guid: b8570eab0174dbe429a9ab66ed5bcf80
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 6115790761550805013
-    second: Millet_0
-  - first:
-      213: -7744196561170423883
-    second: Millet_1
-  - first:
-      213: -6540826567845223350
-    second: Millet_2
-  - first:
-      213: -7166980408536723999
-    second: Millet_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -101,19 +89,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -128,13 +104,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Millet_0
+      name: spark particle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 96
-        height: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +118,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 518f9d67b47afd450800000000000000
-      internalID: 6115790761550805013
+      spriteID: fdfdb460f35cfc44b9dd5ca967e684d8
+      internalID: 1273945293
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_1
+      name: spark particle_1
       rect:
         serializedVersion: 2
-        x: 96
+        x: 16
         y: 0
-        width: 96
-        height: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5bf92a41246178490800000000000000
-      internalID: -7744196561170423883
+      spriteID: 3ee5e17f33f93f4489ceb225adbfcb58
+      internalID: 1204689366
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Millet_2
+      name: spark particle_2
       rect:
         serializedVersion: 2
-        x: 192
+        x: 32
         y: 0
-        width: 96
-        height: 96
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,29 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a44e52e24e05a35a0800000000000000
-      internalID: -6540826567845223350
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Millet_3
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 96
-        height: 96
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ed0cfc6a45c98c90800000000000000
-      internalID: -7166980408536723999
+      spriteID: e7cedcc580b6e4d428d2bbff418b0611
+      internalID: -8798704
       vertices: []
       indices: 
       edges: []
@@ -222,10 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Millet_3: -7166980408536723999
-      Millet_1: -7744196561170423883
-      Millet_2: -6540826567845223350
-      Millet_0: 6115790761550805013
+      spark particle_2: -8798704
+      spark particle_1: 1204689366
+      spark particle_0: 1273945293
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
