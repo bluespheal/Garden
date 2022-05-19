@@ -17,9 +17,13 @@ public class bean : MonoBehaviour
     public float random;
     public VisualEffect collectVfx;
 
+    private bool collected;
+    private Animator anim;
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
+        Invoke("StartFading", 6.0f);
         random = Random.Range(1, (chances[0] + chances[1] + chances[2] + chances[3] + chances[4]));
 
         if (random < chances[0])
@@ -49,6 +53,18 @@ public class bean : MonoBehaviour
         }
 
     }
+
+    private void StartFading()
+    {
+        anim.Play("Blink");
+        Invoke("DestroyMe", 3.0f);
+
+    }
+
+    private void DestroyMe()
+    {
+        Destroy(gameObject);
+    }
     private void GenerateBean(int num)
     {
         gameObject.GetComponent<SpriteRenderer>().sprite = sprites[num];
@@ -65,12 +81,13 @@ public class bean : MonoBehaviour
 
     public IEnumerator Collect()
     {
+        CancelInvoke();
         collectVfx.Play();
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<Collider2D>().enabled = false;
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }
 }
