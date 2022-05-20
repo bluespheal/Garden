@@ -19,6 +19,8 @@ public class bean : MonoBehaviour
 
     private bool collected;
     private Animator anim;
+
+    private int value;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +69,7 @@ public class bean : MonoBehaviour
     }
     private void GenerateBean(int num)
     {
+        value = values[num];
         gameObject.GetComponent<SpriteRenderer>().sprite = sprites[num];
         transform.localScale = transform.localScale * (0.5f+(num*0.33f)); 
     }
@@ -87,6 +90,7 @@ public class bean : MonoBehaviour
         gameObject.GetComponent<Collider2D>().enabled = false;
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
 
+        GameManager.Instance.SetBeans(true, value);
         yield return new WaitForSeconds(3);
         Destroy(gameObject);
     }

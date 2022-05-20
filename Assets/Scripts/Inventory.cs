@@ -18,12 +18,16 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddBeans(int number)
     {
-        
+        beans += number;
+    }
+
+    public void SpendBeans(int number)
+    {
+        beans -= number;
     }
 }
