@@ -5,6 +5,10 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Stats")]
+    [SerializeField] public int maxHealth;
+    [SerializeField] public int currentHealth;
+
     [Header("Graphics")]
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Transform leftLimit;
@@ -23,6 +27,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float slideSpeed;
     [SerializeField] float slideLength;
     [SerializeField] GameObject slideHitbox;
+    [SerializeField] GameObject head;
+    [SerializeField] GameObject lowHead;
+
+    WaitForSeconds slideWFS;
 
     [Header("Attack")]
     [SerializeField] private bool attacking;
@@ -30,35 +38,53 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] public Animator broomAnimator;
     [SerializeField] float attackLength;
     [SerializeField] GameObject attackHitbox;
+    WaitForSeconds attackWFS;
+
     [Header("Busy")]
     [SerializeField] private bool busy;
     [SerializeField] private float busyLength;
+    WaitForSeconds busyWFS;
 
     [Header("Flinch")]
     [SerializeField] private bool flinching;
     [SerializeField] private float flinchTime;
-
-    WaitForSeconds attackWFS;
-    WaitForSeconds slideWFS;
-    WaitForSeconds busyWFS;
-
     WaitForSeconds flinchWFS;
+
+    [Header("Damage")]
+    [SerializeField] private bool hurting;
+    [SerializeField] private float hurtTime;
+    WaitForSeconds hurtingWFS;
+
+    [Header("Blinking")]
+    [SerializeField] private bool blinking;
+    [SerializeField] private float blinkTime;
+    WaitForSeconds blinkingWFS;
+
+    [Header("Dead")]
+    [SerializeField] private bool dying;
+    [SerializeField] private float deathTime;
+    WaitForSeconds dyingWFS;
 
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = 2 ;
+        currentHealth = maxHealth;
         busyWFS = new WaitForSeconds(busyLength);
         attackWFS = new WaitForSeconds(attackLength);
         slideWFS = new WaitForSeconds(slideLength);
         flinchWFS = new WaitForSeconds(flinchTime);
+        hurtingWFS = new WaitForSeconds(hurtTime);
+        blinkingWFS = new WaitForSeconds(blinkTime);
+        dyingWFS = new WaitForSeconds(deathTime);
     }
 
     void Update()
     {
-        if (attacking || flinching)
+        if (attacking || flinching || hurting || dying)
             return;
 
-        if (!sliding || !attacking || !flinching)
+        if (!sliding || !attacking || !flinching || !hurting || !dying)
         {
             transform.Translate(new Vector3(moveVal.x, 0, 0) * moveSpeed * Time.deltaTime);
         }
@@ -69,8 +95,6 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(new Vector3(flippedInt, 0, 0) * slideSpeed * Time.deltaTime);
         }
-
-        
 
         SetLimit();
         FlipSprite();
@@ -139,29 +163,57 @@ public class PlayerMovement : MonoBehaviour
     
         StartCoroutine(Attacking());
     }
-    public void Flinch(bool damage)
+    public void Flinch()
     {
-        if (damage){
-            ReceiveDamage();
-        }
         flinching = true;
         if (!animator.GetBool("Flinch"))
             animator.SetBool("Flinch", true);
         StartCoroutine(Flinching());
     }
 
+    public void Damage()
+    {
+        ReceiveDamage();
+        hurting = true;
+        if (!animator.GetBool("Flinch"))
+            animator.SetBool("Flinch", true);
+        StartCoroutine(Hurting());
+    }
+
+    public void Die()
+    {
+        dying = true;
+        animator.SetBool("Flinch", true);
+        if (!animator.GetBool("Blink"))
+            animator.SetBool("Blink", true);
+        StartCoroutine(Dying());
+    }
+
     public void ReceiveDamage()
     {
-        Debug.Log("Damage! Ouch!");
+        currentHealth--;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
     IEnumerator Sliding()
     {
         slideHitbox.SetActive(true);
+        head.SetActive(false);
+        lowHead.SetActive(true);
         yield return slideWFS;
         sliding = false;
         animator.SetBool("Sliding", false);
         slideHitbox.SetActive(false);
+        head.SetActive(true);
+        lowHead.SetActive(false);
         StartCoroutine(EndBusy());
     }
 
@@ -180,6 +232,34 @@ public class PlayerMovement : MonoBehaviour
         flinching = true;
         yield return flinchWFS;
         flinching = false;
+        animator.SetBool("Flinch", false);
+
+    }
+
+    IEnumerator Hurting()
+    {
+        hurting = true;
+        StartCoroutine(Blinking());
+        head.SetActive(false);
+        lowHead.SetActive(false);
+        yield return hurtingWFS;
+        hurting = false;
+        animator.SetBool("Flinch", false);
+    }
+    IEnumerator Blinking()
+    {
+        yield return blinkingWFS;
+        blinking = false;
+        animator.SetBool("Blink", false);
+        head.SetActive(true);
+        lowHead.SetActive(true);
+    }
+
+    IEnumerator Dying()
+    {
+        dying = true;
+        yield return hurtingWFS;
+        dying = false;
         animator.SetBool("Flinch", false);
     }
 

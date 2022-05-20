@@ -6,7 +6,8 @@ public class Inventory : MonoBehaviour
 {
     [Header("Money")]
     [SerializeField] private int beans;
-
+    [Header("Upgrades")]
+    [SerializeField] private int apples;
     [Header("Veggies")]
     [SerializeField] private Veggie[] veggies;
     [Header("Seeds")]
@@ -19,6 +20,16 @@ public class Inventory : MonoBehaviour
     void Start()
     {
 
+    }
+
+    public int GetApples()
+    {
+        return apples;
+    }
+
+    public int GetBeans()
+    {
+        return beans;
     }
 
     public void AddBeans(int number)

@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     //Instance
     static GameManager instance;
 
-    [SerializeField] private Inventory inventory;
+    [SerializeField] public Inventory inventory;
 
     [SerializeField] public bool paused;
+
+    //ForestUI
+    [SerializeField] ForestUIManager forestUI;
 
     private void Awake()
     {
@@ -22,14 +26,15 @@ public class GameManager : MonoBehaviour
         //Se referencia a si mismo
         instance = this;
         DontDestroyOnLoad(gameObject);
-
-        
     }
     // Start is called before the first frame update
     void Start()
     {
         inventory = GetComponent<Inventory>();
-
+        if (SceneManager.GetActiveScene().name == "Garden")
+        {
+            forestUI = GameObject.Find("---UI---").GetComponent<ForestUIManager>();
+        }
     }
 
     // Update is called once per frame
@@ -48,6 +53,8 @@ public class GameManager : MonoBehaviour
         {
             inventory.SpendBeans(number);
         }
+
+        forestUI.UpdateBeanLabel();
 
     }
 

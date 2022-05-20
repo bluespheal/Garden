@@ -1,0 +1,54 @@
+.heart {
+    width: 50px;
+    height: 50px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    flex-direction: row;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.forest_bar {
+    background-image: none;
+    width: auto;
+    height: 80px;
+    background-color: rgba(255, 146, 0, 0.44);
+    bottom: 0;
+    right: auto;
+    left: 0;
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    -unity-background-scale-mode: scale-and-crop;
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-left-radius: 42px;
+    border-bottom-left-radius: 42px;
+    border-top-right-radius: 42px;
+    border-bottom-right-radius: 42px;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    align-items: center;
+}
+
+.forest_bar_icon {
+    background-image: url('project://database/Assets/Sprites/Bean.png?fileID=21300000&guid=b35c29348e4a5a74e8ca1a78d4e5070e&type=3#Bean');
+    width: 40px;
+    height: 40px;
+    margin-left: 30px;
+    font-size: 106px;
+    margin-right: 0;
+}
+
+.forest_bar_text {
+}

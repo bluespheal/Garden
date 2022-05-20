@@ -13,8 +13,12 @@ public class HeadCollider : MonoBehaviour
         {
             if (CalculateForce(collision.relativeVelocity.magnitude) > 18f)
             {
-                player.Flinch(false);
+                player.Flinch();
             }
+        }
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            player.Damage();
         }
     }
 
