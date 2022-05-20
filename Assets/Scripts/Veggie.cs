@@ -2,9 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using HutongGames.PlayMaker;
+using Unity.Rendering;
 
 public class Veggie : MonoBehaviour
 {
+    [Header("VeggieLooks")]
+    [SerializeField] public Color veggie_color;
+    [SerializeField] public Renderer renderer;
+    [SerializeField] private TrailRenderer trail;
+
+    [Header("VeggieStats")]
+    [SerializeField] public float veggie_weight;
+
     [SerializeField] public float veggie_power;
     [SerializeField] private float veggie_drag;
     [SerializeField] private float veggie_bounciness;
@@ -15,6 +24,12 @@ public class Veggie : MonoBehaviour
 
     private void Start()
     {
+        trail.startColor = veggie_color;
+        trail.endColor = veggie_color;
+
+        GetComponent<Rigidbody2D>().mass = veggie_weight;
+        renderer.material.SetColor("_color", veggie_color);
+ 
         initialPos = transform.position;
         pMat.bounciness = veggie_bounciness;
         pMat.friction = veggie_drag;

@@ -274,7 +274,7 @@ SpriteShapeRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Color: {r: 1, g: 0.3719692, b: 0.26666665, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_MaskInteraction: 0
   m_ShapeTexture: {fileID: 2800000, guid: 2ba9525eb9c90204e812d399b108514e, type: 3}
   m_Sprites:
@@ -515,7 +515,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0fc0b3d4acb7a143bacdd42789aba26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  veggie_power: 2
+  veggie_color: {r: 1, g: 0.40904054, b: 0, a: 1}
+  renderer: {fileID: 2617173749957613585}
+  trail: {fileID: 2617173749506380526}
+  veggie_weight: 1
+  veggie_power: 1
   veggie_drag: 0.7
   veggie_bounciness: 0.7
+  initialPos: {x: 0, y: 0, z: 0}
   pMat: {fileID: 6200000, guid: bdcf2a24d10433b4aad96b830a0d10dd, type: 2}
