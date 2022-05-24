@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 2 ;
+        maxHealth = 2 + GameManager.Instance.Inventory.GetApples();
         currentHealth = maxHealth;
         busyWFS = new WaitForSeconds(busyLength);
         attackWFS = new WaitForSeconds(attackLength);
@@ -143,7 +143,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Slide()
     {
-        if (busy || flinching) return;
+        if (busy || flinching || hurting || dying) return;
         sliding = true;
         busy = true;
         if (!animator.GetBool("Sliding"))
@@ -153,7 +153,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Attack()
     {
-        if (busy || flinching) return;
+        if (busy || flinching || hurting || dying) return;
         attacking = true;
         busy = true;
         animator.SetTrigger("Attack");
@@ -173,19 +173,41 @@ public class PlayerMovement : MonoBehaviour
 
     public void Damage()
     {
-        ReceiveDamage();
+        if (hurting)
+            return;
         hurting = true;
+        GameManager.Instance.ForestUIManager.UpdateHeartBar(currentHealth, true);
         if (!animator.GetBool("Flinch"))
             animator.SetBool("Flinch", true);
-        StartCoroutine(Hurting());
+        if (!animator.GetBool("Blink"))
+            animator.SetBool("Blink", true);
+
+        ReceiveDamage();
+
+        if (!dying)
+            StartCoroutine(Hurting());
+    }
+
+    public void Heal()
+    {
+        currentHealth++;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else
+        {
+            GameManager.Instance.ForestUIManager.UpdateHeartBar(currentHealth, false);
+        }
     }
 
     public void Die()
     {
+        if (dying)
+            return;
         dying = true;
-        animator.SetBool("Flinch", true);
-        if (!animator.GetBool("Blink"))
-            animator.SetBool("Blink", true);
+        if (!animator.GetBool("Flinch"))
+            animator.SetBool("Flinch", true);
         StartCoroutine(Dying());
     }
 
@@ -197,7 +219,7 @@ public class PlayerMovement : MonoBehaviour
             currentHealth = maxHealth;
         }
 
-        if (currentHealth <= 0)
+        if (currentHealth == 0)
         {
             Die();
         }
@@ -258,8 +280,12 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Dying()
     {
         dying = true;
-        yield return hurtingWFS;
+        animator.SetBool("Blink", false);
+        yield return dyingWFS;
         dying = false;
+        //Do all the dying stuff.
+        Debug.Log("Dead");
+        //
         animator.SetBool("Flinch", false);
     }
 

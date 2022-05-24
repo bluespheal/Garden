@@ -6,72 +6,58 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //Instance
-    static GameManager instance;
-
-    [SerializeField] public Inventory inventory;
+    public static GameManager Instance { get; private set; }
+    public Inventory Inventory { get; private set; }
+    //ForestUI
+    public ForestUIManager ForestUIManager { get; private set; }
+    public AudioManager AudioManager { get; private set; }
 
     [SerializeField] public bool paused;
 
-    //ForestUI
-    [SerializeField] ForestUIManager forestUI;
 
     private void Awake()
     {
-        //Si ya existe otro Game Manager se autodestruye
-        if (instance != null && instance != this)
+        if (Instance != null && Instance != this)
         {
-            Destroy(gameObject);
+            Destroy(this);
             return;
         }
-        //Se referencia a si mismo
-        instance = this;
-        DontDestroyOnLoad(gameObject);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        inventory = GetComponent<Inventory>();
-        if (SceneManager.GetActiveScene().name == "Garden")
-        {
-            forestUI = GameObject.Find("---UI---").GetComponent<ForestUIManager>();
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         
+        Instance = this;
+        Inventory = GetComponentInChildren<Inventory>();
+        AudioManager = GetComponentInChildren<AudioManager>();
+        ForestUIManager = GetComponentInChildren<ForestUIManager>();
+        DontDestroyOnLoad(gameObject);
+
     }
 
     public void SetBeans(bool adding, int number)
     {
         if (adding)
         {
-            inventory.AddBeans(number);
+            Inventory.AddBeans(number);
         }
         else
         {
-            inventory.SpendBeans(number);
+            Inventory.SpendBeans(number);
         }
 
-        forestUI.UpdateBeanLabel();
+        ForestUIManager.UpdateBeanLabel();
 
     }
 
-    [RuntimeInitializeOnLoadMethod]
-    static void Autogenerate()
-    {
-        GameObject go = new GameObject("GameManager");
-        instance = go.AddComponent<GameManager>();
-        go.AddComponent<Inventory>();
-        
-    }
+    //[RuntimeInitializeOnLoadMethod]
+    //static void Autogenerate()
+    //{
+    //    GameObject go = new GameObject("GameManager");
+    //    Instance = go.AddComponent<GameManager>();        
+    //}
 
-    public static GameManager Instance
-    {
-        get
-        {
-            return instance;
-        }
-    }
+    //public static GameManager Instance
+    //{
+    //    get
+    //    {
+    //        return instance;
+    //    }
+    //}
 }

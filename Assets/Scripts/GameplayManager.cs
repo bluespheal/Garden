@@ -5,7 +5,9 @@ using HutongGames.PlayMaker;
 public class GameplayManager : MonoBehaviour
 {
     public PlayMakerFSM enemyspawnerSFM;
+    public ItemSpawner itemSpawner;
     public int enemiesDefeated;
+
 
     [Header("Current Levels")]
     [SerializeField] private float minWaitTime;
@@ -16,12 +18,17 @@ public class GameplayManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (!itemSpawner)
+            itemSpawner = GameObject.Find("ItemSpawner").GetComponent<ItemSpawner>();
     }
 
     public void IncreaseEnemyCount()
     {
         enemiesDefeated++;
+        GameManager.Instance.ForestUIManager.UpdateEnemyLabel(enemiesDefeated);
         RecalculateStats();
+        if( enemiesDefeated % 3 == 0)
+            itemSpawner.SpawnItem();
     }
 
     public void RecalculateStats()

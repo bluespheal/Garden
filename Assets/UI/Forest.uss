@@ -1,27 +1,27 @@
 .heart {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     padding-left: 0;
     padding-right: 0;
     padding-top: 0;
     padding-bottom: 0;
     flex-direction: row;
-    margin-right: 10px;
-    margin-left: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 .forest_bar {
     background-image: none;
     width: auto;
-    height: 80px;
+    height: 100%;
     background-color: rgba(255, 146, 0, 0.44);
     bottom: 0;
     right: auto;
     left: 0;
-    padding-left: 3px;
-    padding-right: 3px;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     -unity-background-scale-mode: scale-and-crop;
     border-left-width: 4px;
     border-right-width: 4px;
@@ -31,12 +31,12 @@
     border-right-color: rgb(255, 255, 255);
     border-top-color: rgb(255, 255, 255);
     border-bottom-color: rgb(255, 255, 255);
-    border-top-left-radius: 42px;
-    border-bottom-left-radius: 42px;
-    border-top-right-radius: 42px;
-    border-bottom-right-radius: 42px;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     position: relative;
     align-items: center;
 }
@@ -51,4 +51,6 @@
 }
 
 .forest_bar_text {
+    justify-content: space-around;
+    align-items: stretch;
 }

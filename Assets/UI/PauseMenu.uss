@@ -1,0 +1,27 @@
+.pause_button {
+    width: 50%;
+    height: 60px;
+    font-size: 39px;
+    -unity-font-definition: url('project://database/Assets/Fonts/EastSeaDokdo-Regular%20SDF.asset?fileID=11400000&guid=04a3f57e2e8f7324ab95d6f4c5e1dc23&type=2#EastSeaDokdo-Regular SDF');
+    -unity-font-style: bold;
+    color: rgba(255, 255, 255, 255);
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    background-color: rgba(70, 0, 125, 255);
+    border-left-color: rgba(255, 255, 255, 255);
+    border-right-color: rgba(255, 255, 255, 255);
+    border-top-color: rgba(255, 255, 255, 255);
+    border-bottom-color: rgba(255, 255, 255, 255);
+    border-left-width: 5px;
+    border-right-width: 5px;
+    border-top-width: 5px;
+    border-bottom-width: 5px;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-top-right-radius: 22px;
+    border-bottom-right-radius: 22px;
+    margin-left: 12px;
+    margin-right: 12px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}

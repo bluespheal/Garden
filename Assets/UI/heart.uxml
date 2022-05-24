@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="heart" class="heart" style="background-image: url(&apos;project://database/Assets/Sprites/HeartBorder.png?fileID=2800000&amp;guid=2cbffe0ba2c2b5b40aa86577b4f891b5&amp;type=3#HeartBorder&apos;);">
+        <ui:VisualElement name="heart_fill" style="background-image: url(&apos;project://database/Assets/Sprites/HeartCenter.png?fileID=2800000&amp;guid=f977ff489ff21fd499dd3586e6a8bc53&amp;type=3#HeartCenter&apos;); -unity-background-image-tint-color: rgb(234, 0, 255); width: 100%; height: 100%;" />
+    </ui:VisualElement>
+</ui:UXML>

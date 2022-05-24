@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+
     [Header("Money")]
     [SerializeField] private int beans;
     [Header("Upgrades")]
@@ -13,8 +14,12 @@ public class Inventory : MonoBehaviour
     [Header("Seeds")]
     [SerializeField] private Seed[] seeds;
     [Header("Furniture")]
-    [SerializeField] private Furniture[] furniture;
+    [SerializeField] 
+    private List<Furniture> _furniture = new List<Furniture>(); //Change to furniture later
 
+    public List<Furniture> FurnitureList => _furniture;
+
+    public int GetItemsCount => FurnitureList.Count;
 
     // Start is called before the first frame update
     void Start()
