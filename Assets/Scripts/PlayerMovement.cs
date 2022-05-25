@@ -300,12 +300,9 @@ public class PlayerMovement : MonoBehaviour
         dying = true;
         animator.SetBool("Blink", false);
         animator.SetBool("Flinch", true);
-        Debug.Log("Dead");
+        GameManager.Instance.canTogglePause = false;
         yield return dyingWFS;
-        //dying = false;
-        //Do all the dying stuff.
-        //animator.SetBool("Flinch", false);
-        //
+        GameManager.Instance.SceneChanger.ChangeLevel("MainMenu");
     }
 
     IEnumerator EndBusy()

@@ -11,8 +11,10 @@ public class GameManager : MonoBehaviour
     //ForestUI
     public ForestUIManager ForestUIManager { get; private set; }
     public AudioManager AudioManager { get; private set; }
+    public SceneChanger SceneChanger { get; private set; }
 
     [SerializeField] public bool paused;
+    [SerializeField] public bool canTogglePause;
 
 
     private void Awake()
@@ -27,6 +29,8 @@ public class GameManager : MonoBehaviour
         Inventory = GetComponentInChildren<Inventory>();
         AudioManager = GetComponentInChildren<AudioManager>();
         ForestUIManager = GetComponentInChildren<ForestUIManager>();
+        SceneChanger = GetComponentInChildren<SceneChanger>();
+
         DontDestroyOnLoad(gameObject);
 
     }
@@ -48,6 +52,8 @@ public class GameManager : MonoBehaviour
 
     public void TogglePause()
     {
+        if (!canTogglePause)
+            return;
         if (paused) 
         {
             ResumeTheGame();

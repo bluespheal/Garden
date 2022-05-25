@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -9,25 +10,21 @@ public class PauseMenu : MonoBehaviour
     private VisualElement _pauseMenu;
     private VisualElement _root;
     private Button _pause;
+    private Button _quit;
 
     [SerializeField]
     private StyleSheet _styleSheet;
     [SerializeField]
     private VisualTreeAsset _visualTreeAssetItem;
 
-    private void Awake()
-    {
-        
-
-    }
-
     private void OnEnable()
     {
         _uIDocument = GetComponent<UIDocument>();
         _root = _uIDocument.rootVisualElement;
         _pauseMenu = _root.Q<VisualElement>("PauseMenu");
-        _pause = _root.Q<Button>("Focu");
-        PopulateMenuItems();
+        _pause = _root.Q<Button>("Continue");
+        _quit = _root.Q<Button>("Quit");
+        
         if (_pause != null)
         {
             _pause.Focus();
@@ -36,9 +33,21 @@ public class PauseMenu : MonoBehaviour
                 GameManager.Instance.ResumeTheGame();
             };
         }
-        
+
+        if (_quit != null)
+        {
+            _quit.clickable.clicked += () =>
+            {
+                GameManager.Instance.canTogglePause = false;
+                GameObject.Find("EventSystem").SetActive(false);
+                GameObject.Find("Millet").GetComponent<PlayerMovement>().enabled = false;
+                GameManager.Instance.SceneChanger.ChangeLevel("MainMenu");
+            };
+        }
+
     }
 
+    //PopulateMenuItems();
     private void PopulateMenuItems()
     {
         for (int i = 0; i < 5; i++)

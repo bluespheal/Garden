@@ -33,7 +33,7 @@ public class SceneChanger : MonoBehaviour
 
         float fadeTimeInSeconds = anim.GetCurrentAnimatorStateInfo(0).length / anim.speed;
 
-        yield return new WaitForSeconds(fadeTimeInSeconds);
+        yield return new WaitForSecondsRealtime(fadeTimeInSeconds);
         SceneManager.LoadScene(_levelName);
     }
 

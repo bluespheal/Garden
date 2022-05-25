@@ -1,0 +1,9 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Transition.uss?fileID=7433441132597879392&amp;guid=ec3beeae8d49da346ab7a3325c021b32&amp;type=3#Transition" />
+    <ui:VisualElement style="flex-direction: row; flex-grow: 1; justify-content: flex-start; display: flex;">
+        <ui:VisualElement focusable="true" class="stripe orange_stripe" style="display: flex;" />
+        <ui:VisualElement class="purple_stripe stripe" />
+        <ui:VisualElement class="orange_stripe stripe" style="flex-grow: 1;" />
+        <ui:VisualElement class="purple_stripe stripe" style="flex-grow: 1;" />
+    </ui:VisualElement>
+</ui:UXML>
