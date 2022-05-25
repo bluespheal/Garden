@@ -8,13 +8,9 @@ public class EnemyExplode : MonoBehaviour
 
     public VisualEffect defeatVfx;
 
-    public void GiveBeans()
-    {
-
-    }
-
     public void PlayDefeatVFX()
     {
+        GameManager.Instance.AudioManager.PlaySFX(1);
         defeatVfx.Play();
     }
 

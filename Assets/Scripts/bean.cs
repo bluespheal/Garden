@@ -86,6 +86,7 @@ public class bean : MonoBehaviour
     {
         CancelInvoke();
         collectVfx.Play();
+        GameManager.Instance.AudioManager.PlaySFX(4);
         gameObject.GetComponent<SpriteRenderer>().enabled = false;
         gameObject.GetComponent<Collider2D>().enabled = false;
         gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;

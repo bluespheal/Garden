@@ -46,6 +46,33 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void TogglePause()
+    {
+        if (paused) 
+        {
+            ResumeTheGame();
+        }
+        else
+        {
+            PauseTheGame();
+        }
+    }
+    public void PauseTheGame()
+    {
+        paused = true;
+        Time.timeScale = 0;
+        AudioListener.pause = true;
+
+    }
+
+    public void ResumeTheGame()
+    {
+        paused = false;
+        Time.timeScale = 1;
+        AudioListener.pause = false;
+
+    }
+
     //[RuntimeInitializeOnLoadMethod]
     //static void Autogenerate()
     //{

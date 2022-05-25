@@ -13,6 +13,7 @@ public class HeadCollider : MonoBehaviour
         {
             if (CalculateForce(collision.relativeVelocity.magnitude) > 18f)
             {
+                GameManager.Instance.AudioManager.PlaySFX(5);
                 player.Flinch();
             }
         }

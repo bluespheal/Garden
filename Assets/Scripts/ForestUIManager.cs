@@ -67,6 +67,9 @@ public class ForestUIManager : MonoBehaviour
 
     public void UpdateHeartBar(int current_hearts, bool damage)
     {
+        if (current_hearts <= 0)
+            return;
+
         if (damage)
         {
             VisualElement som = heartBar.ElementAt(current_hearts - 1);

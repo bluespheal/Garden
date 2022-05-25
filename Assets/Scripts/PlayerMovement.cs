@@ -81,6 +81,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (GameManager.Instance.paused)
+            return;
         if (attacking || flinching || hurting || dying)
             return;
 
@@ -133,14 +135,21 @@ public class PlayerMovement : MonoBehaviour
 
     void OnSlide(InputValue value)
     {
+        if (GameManager.Instance.paused)
+            return;
         Slide();
     }
 
     void OnAttack(InputValue value)
     {
+        if (GameManager.Instance.paused)
+            return;
         Attack();
     }
-
+    void OnPause(InputValue value)
+    {
+        GameManager.Instance.TogglePause();
+    }
     public void Slide()
     {
         if (busy || flinching || hurting || dying) return;
@@ -173,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Damage()
     {
-        if (hurting)
+        if (hurting || dying)
             return;
         hurting = true;
         GameManager.Instance.ForestUIManager.UpdateHeartBar(currentHealth, true);
@@ -185,6 +194,7 @@ public class PlayerMovement : MonoBehaviour
         ReceiveDamage();
 
         if (!dying)
+            GameManager.Instance.AudioManager.PlaySFX(2);
             StartCoroutine(Hurting());
     }
 
@@ -203,11 +213,14 @@ public class PlayerMovement : MonoBehaviour
 
     public void Die()
     {
+        GameManager.Instance.AudioManager.PlaySFX(3);
         if (dying)
             return;
         dying = true;
         if (!animator.GetBool("Flinch"))
             animator.SetBool("Flinch", true);
+        head.SetActive(false);
+        lowHead.SetActive(false);
         StartCoroutine(Dying());
     }
 
@@ -281,12 +294,12 @@ public class PlayerMovement : MonoBehaviour
     {
         dying = true;
         animator.SetBool("Blink", false);
-        yield return dyingWFS;
-        dying = false;
-        //Do all the dying stuff.
         Debug.Log("Dead");
+        yield return dyingWFS;
+        //dying = false;
+        //Do all the dying stuff.
+        //animator.SetBool("Flinch", false);
         //
-        animator.SetBool("Flinch", false);
     }
 
     IEnumerator EndBusy()

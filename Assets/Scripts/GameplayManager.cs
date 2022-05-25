@@ -18,6 +18,8 @@ public class GameplayManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameManager.Instance.AudioManager.PlaySong(1);
+
         if (!itemSpawner)
             itemSpawner = GameObject.Find("ItemSpawner").GetComponent<ItemSpawner>();
     }
@@ -27,7 +29,7 @@ public class GameplayManager : MonoBehaviour
         enemiesDefeated++;
         GameManager.Instance.ForestUIManager.UpdateEnemyLabel(enemiesDefeated);
         RecalculateStats();
-        if( enemiesDefeated % 3 == 0)
+        if( enemiesDefeated % 20 == 0)
             itemSpawner.SpawnItem();
     }
 
@@ -96,6 +98,7 @@ public class GameplayManager : MonoBehaviour
         minWaitTime = minTime;
         maxWaitTime = maxTime;
     }
+
 
     public void UpdateEnemyLevels()
     {

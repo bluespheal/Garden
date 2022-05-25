@@ -65,6 +65,7 @@ public class EnemyVarSetter : MonoBehaviour
         enemySFM.FsmVariables.GetFsmInt("BeanNumber").Value = currentBean;
         enemySFM.FsmVariables.GetFsmFloat("BaseSpeed").Value = currentSpeed;
         enemySFM.FsmVariables.GetFsmFloat("EnemyHealth").Value = currentHealth;
+        enemySFM.FsmVariables.GetFsmFloat("Volume").Value = GameManager.Instance.AudioManager.sfxVolume;
     }
 
 
@@ -77,5 +78,4 @@ public class EnemyVarSetter : MonoBehaviour
         gameplayManager.IncreaseEnemyCount();
     }
 
-    
 }
