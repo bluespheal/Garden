@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
         paused = true;
         Time.timeScale = 0;
         AudioListener.pause = true;
+        ForestUIManager.ShowPauseMenu();
 
     }
 
@@ -70,7 +71,7 @@ public class GameManager : MonoBehaviour
         paused = false;
         Time.timeScale = 1;
         AudioListener.pause = false;
-
+        ForestUIManager.HidePauseMenu();
     }
 
     //[RuntimeInitializeOnLoadMethod]

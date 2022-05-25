@@ -264,22 +264,27 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Flinching()
     {
+        
         flinching = true;
         yield return flinchWFS;
         flinching = false;
+        print("flinching");
         animator.SetBool("Flinch", false);
 
     }
 
     IEnumerator Hurting()
     {
+        
         hurting = true;
         StartCoroutine(Blinking());
         head.SetActive(false);
         lowHead.SetActive(false);
         yield return hurtingWFS;
         hurting = false;
-        animator.SetBool("Flinch", false);
+        print("hurting");
+        if (!dying)
+            animator.SetBool("Flinch", false);
     }
     IEnumerator Blinking()
     {
@@ -294,6 +299,7 @@ public class PlayerMovement : MonoBehaviour
     {
         dying = true;
         animator.SetBool("Blink", false);
+        animator.SetBool("Flinch", true);
         Debug.Log("Dead");
         yield return dyingWFS;
         //dying = false;

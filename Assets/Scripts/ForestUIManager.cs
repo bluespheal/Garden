@@ -8,6 +8,8 @@ public class ForestUIManager : MonoBehaviour
     [SerializeField] private UIDocument uiDoc;
     [SerializeField] private VisualTreeAsset _heart;
     [SerializeField] private VisualTreeAsset _heartFill;
+    [SerializeField] private GameObject pauseMenu;
+    
 
     private Label beanLabel;
     private Label enemyLabel;   
@@ -81,6 +83,18 @@ public class ForestUIManager : MonoBehaviour
             _heartFill.CloneTree(som.ElementAt(0));
         }
         
+    }
+    public void ShowPauseMenu()
+    {
+        if (pauseMenu)
+            pauseMenu.SetActive(true);
+
+    }
+
+    public void HidePauseMenu()
+    {
+        if (pauseMenu)
+            pauseMenu.SetActive(false);
     }
 
 

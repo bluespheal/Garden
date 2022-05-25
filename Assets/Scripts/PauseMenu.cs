@@ -8,6 +8,7 @@ public class PauseMenu : MonoBehaviour
     private UIDocument _uIDocument;
     private VisualElement _pauseMenu;
     private VisualElement _root;
+    private Button _pause;
 
     [SerializeField]
     private StyleSheet _styleSheet;
@@ -16,11 +17,26 @@ public class PauseMenu : MonoBehaviour
 
     private void Awake()
     {
+        
+
+    }
+
+    private void OnEnable()
+    {
         _uIDocument = GetComponent<UIDocument>();
         _root = _uIDocument.rootVisualElement;
         _pauseMenu = _root.Q<VisualElement>("PauseMenu");
-
+        _pause = _root.Q<Button>("Focu");
         PopulateMenuItems();
+        if (_pause != null)
+        {
+            _pause.Focus();
+            _pause.clickable.clicked += () =>
+            {
+                GameManager.Instance.ResumeTheGame();
+            };
+        }
+        
     }
 
     private void PopulateMenuItems()
