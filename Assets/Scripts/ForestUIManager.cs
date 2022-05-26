@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class ForestUIManager : MonoBehaviour
 {
@@ -22,18 +23,25 @@ public class ForestUIManager : MonoBehaviour
     private int hearts;
     private void Awake()
     {
+        uiDoc = GameObject.Find("MainUI").GetComponent<UIDocument>();
         var rootElement = uiDoc.rootVisualElement;
         beanLabel = rootElement.Q<Label>("bean_text");
         enemyLabel = rootElement.Q<Label>("enemy_text");
         heartBar = rootElement.Q<VisualElement>("hp_bar");
     }
 
-    private void Start()
+    public void SetUIDocForForest()
     {
-        SetHearts();
+        pauseMenu = GameObject.Find("PauseMenu");
+        pauseMenu.SetActive(false);
+        uiDoc = GameObject.Find("MainUI").GetComponent<UIDocument>();
+        var rootElement = uiDoc.rootVisualElement;
+        beanLabel = rootElement.Q<Label>("bean_text");
+        enemyLabel = rootElement.Q<Label>("enemy_text");
+        heartBar = rootElement.Q<VisualElement>("hp_bar");
     }
 
-    void SetHearts()
+    public void SetHearts()
     {
         hearts = 2 + GameManager.Instance.Inventory.GetApples();
         AddHearts();

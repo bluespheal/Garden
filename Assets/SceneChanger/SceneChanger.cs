@@ -10,6 +10,8 @@ public class SceneChanger : MonoBehaviour
     public float fadeOutSpeed;
 
     public GameObject fadeImage;
+
+    public bool busy;
     void Start()
     {
         fadeImage = GameObject.Find("SceneChanger_FadeCanvas");
@@ -22,11 +24,14 @@ public class SceneChanger : MonoBehaviour
   
     public void ChangeLevel(string targetScene) //Changes scene to whatever scene is passed into the function
     {
+        if (busy)
+            return;
         StartCoroutine( FadeOut(targetScene));
     }
 
     public IEnumerator FadeOut(string _levelName)
     {
+        busy = true;
         Animator anim = fadeImage.GetComponent<Animator>();
         anim.speed = fadeOutSpeed;
         anim.PlayInFixedTime("Base Layer.Fade Out", 0, 0);
@@ -35,6 +40,7 @@ public class SceneChanger : MonoBehaviour
 
         yield return new WaitForSecondsRealtime(fadeTimeInSeconds);
         SceneManager.LoadScene(_levelName);
+        busy = false;
     }
 
 }

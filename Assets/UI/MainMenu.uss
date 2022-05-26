@@ -1,0 +1,76 @@
+Label {
+    font-size: 20px;
+    -unity-font-style: normal;
+    color: rgb(68, 138, 255);
+}
+
+.main_menu_button {
+    -unity-font-definition: url('project://database/Assets/Fonts/Margarine-Regular%20SDF.asset?fileID=11400000&guid=7aba615d63448024893e2d131a64b238&type=2#Margarine-Regular SDF');
+    -unity-text-outline-width: 2px;
+    color: rgb(255, 255, 255);
+    font-size: 46px;
+    background-color: rgb(87, 38, 166);
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -unity-font-style: normal;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    letter-spacing: 2px;
+}
+
+.main_menu_button:focus {
+    background-color: rgb(145, 106, 207);
+    transition-property: rotate;
+    transition-duration: 2s;
+    transition-timing-function: ease-out-bounce;
+    transition-delay: 0.1s;
+    rotate: 2deg;
+    -unity-font-style: bold;
+    font-size: 46px;
+}
+
+.back_button {
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    background-image: url('project://database/Assets/PlayMaker/Editor/Watermarks/LeftArrow.png?fileID=2800000&guid=612841212d163524b8d286d96a5d25d3&type=3#LeftArrow');
+    border-top-left-radius: 93px;
+    border-bottom-left-radius: 93px;
+    border-top-right-radius: 93px;
+    border-bottom-right-radius: 93px;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(87, 38, 166);
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-top-width: 6px;
+    border-bottom-width: 6px;
+    margin-right: 27px;
+    margin-bottom: 19px;
+}
+
+.back_button:focus {
+    background-color: rgba(145, 106, 207, 255);
+}

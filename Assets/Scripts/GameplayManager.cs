@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using HutongGames.PlayMaker;
+using UnityEngine.UIElements;
+using UnityEngine.InputSystem;
+
 public class GameplayManager : MonoBehaviour
 {
     public PlayMakerFSM enemyspawnerSFM;
@@ -19,6 +22,9 @@ public class GameplayManager : MonoBehaviour
     void Start()
     {
         GameManager.Instance.AudioManager.PlaySong(1);
+        GameManager.Instance.ForestUIManager.SetUIDocForForest();
+
+        GameManager.Instance.ForestUIManager.SetHearts();
 
         if (!itemSpawner)
             itemSpawner = GameObject.Find("ItemSpawner").GetComponent<ItemSpawner>();

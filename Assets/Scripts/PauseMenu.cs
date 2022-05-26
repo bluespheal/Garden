@@ -39,7 +39,6 @@ public class PauseMenu : MonoBehaviour
             _quit.clickable.clicked += () =>
             {
                 GameManager.Instance.canTogglePause = false;
-                GameObject.Find("EventSystem").SetActive(false);
                 GameObject.Find("Millet").GetComponent<PlayerMovement>().enabled = false;
                 GameManager.Instance.SceneChanger.ChangeLevel("MainMenu");
             };

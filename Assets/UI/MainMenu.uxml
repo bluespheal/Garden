@@ -1,0 +1,20 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=f8952dcd4655e5642bbd2484ca7c0678&amp;type=3#MainMenu" />
+    <ui:VisualElement name="MainMenu" style="background-image: url(&apos;project://database/Assets/Sprites/House.png?fileID=2800000&amp;guid=49ebd1619206efe419733565431548c2&amp;type=3#House&apos;); width: 100%; height: 100%; flex-direction: row;">
+        <ui:VisualElement name="OptionsMenu" style="width: 48%;">
+            <ui:Button text="Garden" display-tooltip-when-elided="true" name="Garden" class="main_menu_button" />
+            <ui:Button text="Forest" display-tooltip-when-elided="true" name="Forest" class="main_menu_button" />
+            <ui:Button text="House" display-tooltip-when-elided="true" name="House" class="main_menu_button" />
+            <ui:Button text="Shop" display-tooltip-when-elided="true" name="Shop" class="main_menu_button" />
+            <ui:Button text="Help" display-tooltip-when-elided="true" name="Help" class="main_menu_button" />
+            <ui:Button text="Credits" display-tooltip-when-elided="true" name="Credits" class="main_menu_button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Stats" style="align-items: flex-end; flex-grow: 1; justify-content: space-between;">
+            <ui:VisualElement name="beans_bar" class="forest_bar" style="flex-direction: row; background-color: rgba(255, 137, 0, 0.64); border-left-width: 7px; border-right-width: 7px; border-top-width: 7px; border-bottom-width: 7px; border-left-color: rgb(255, 255, 255); border-right-color: rgb(255, 255, 255); border-top-color: rgb(255, 255, 255); border-bottom-color: rgb(255, 255, 255); border-top-left-radius: 20px; border-bottom-left-radius: 20px; border-top-right-radius: 20px; border-bottom-right-radius: 20px; flex-grow: 0; flex-shrink: 0; justify-content: flex-end; align-items: center; padding-left: 7px; padding-right: 7px; padding-top: 2px; padding-bottom: 7px; margin-top: 33px; margin-right: 33px;">
+                <ui:VisualElement name="bean_icon" style="background-image: url(&apos;project://database/Assets/Sprites/Bean.png?fileID=2800000&amp;guid=b35c29348e4a5a74e8ca1a78d4e5070e&amp;type=3#Bean&apos;); width: 32px; height: 32px;" />
+                <ui:Label text="00000" display-tooltip-when-elided="true" name="bean_text" class="forest_bar_text" style="font-size: 40px; padding-left: 20px; padding-right: 20px; color: rgb(255, 255, 255); -unity-text-outline-width: 3px; -unity-text-outline-color: rgba(0, 0, 0, 0); -unity-text-align: middle-center; margin-left: 6px; -unity-font-style: bold; -unity-font: url(&apos;project://database/Assets/Fonts/Monofett-Regular.ttf?fileID=12800000&amp;guid=d508892cfd8963643914d30070f89c8c&amp;type=3#Monofett-Regular&apos;); -unity-font-definition: url(&apos;project://database/Assets/Fonts/Monofett-Regular%20SDF.asset?fileID=11400000&amp;guid=83f7081ba1f836643837e5b85f409d1d&amp;type=2#Monofett-Regular SDF&apos;); padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0;" />
+            </ui:VisualElement>
+            <ui:Button display-tooltip-when-elided="true" class="back_button" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
