@@ -9,12 +9,26 @@ namespace Core.SaveDataManager
     public class SaveDataManager
     {
         static DirectoryInfo dirInfo = new DirectoryInfo(Application.persistentDataPath + "/");
+
         public static void NewGame()
         {
             string pathCombined = Path.Combine(Application.persistentDataPath, "SaveData" + ".data");
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Create(pathCombined);
-            bf.Serialize(file, new Inventory(0, 0, new List<InventoryItem>()));
+
+            Debug.Log(Application.persistentDataPath);
+
+            Inventory inv = new Inventory(0, 0, new List<InventoryItem>());
+
+            List<InventoryItem> itemList = new List<InventoryItem>();
+            List<SaveInventoryItem> wrappedList = new List<SaveInventoryItem>();
+
+            foreach (InventoryItem xItem in itemList)
+            {
+                wrappedList.Add(new SaveInventoryItem(xItem));
+            }
+
+            bf.Serialize(file, new SaveInventory(inv));
             file.Close();
         }
 
@@ -33,7 +47,19 @@ namespace Core.SaveDataManager
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 FileStream file = File.Open(pathCombined, FileMode.Open);
-                Inventory currentInventory = (Inventory)bf.Deserialize(file);
+                SaveInventory inv = (SaveInventory)bf.Deserialize(file);
+
+                Inventory ninv = new Inventory();
+
+                ninv.beans = inv.beans;
+                ninv.apples = inv.apples;
+
+                foreach(SaveInventoryItem item in inv.items)
+                {
+                    ninv._items.Add(new InventoryItem(item));
+                }
+
+                Inventory currentInventory = ninv;
                 file.Close();
                 return currentInventory;
             }

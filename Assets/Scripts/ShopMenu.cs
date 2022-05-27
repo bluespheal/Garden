@@ -23,6 +23,7 @@ public class ShopMenu : MonoBehaviour
 
     public Couscous couscous;
 
+    public bool skip;
     private void Start()
     {
         _shopItem_list.Reverse();
@@ -65,34 +66,37 @@ public class ShopMenu : MonoBehaviour
             _item.focusable = true;
             _item.clickable.clicked += () =>
             {
-                BuyItem(inventoryItem);
+                BuyItem(inventoryItem, _itemNumber);
             };
             _item_list_container.Insert(0, _item);
         }
     }
 
-    void BuyItem(InventoryItem item)
+    void BuyItem(InventoryItem item, Label amount_label)
     {
-        if(GameManager.Instance.currentInventory.Inventory.apples >= 3)
+        if(GameManager.Instance.currentInventory.Inventory.apples >= 3 && item.Name == "Golden Fruit")
         {
             couscous.LimitDialogue();
             return;
         }
 
-        if (GameManager.Instance.currentInventory.Inventory.beans < item.Price)
         {
-            couscous.NotEnoughMoneyDialogue();
-            return;
-        }
-        else
-        {
-            couscous.PurchaseDialogue();
+            if (GameManager.Instance.currentInventory.Inventory.beans < item.Price)
+            {
+                couscous.NotEnoughMoneyDialogue();
+            }
+            else
+            {
+                couscous.PurchaseDialogue();
 
-            GameManager.Instance.currentInventory.SpendBeans(item.Price);
-            GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals(item.Name)).Amount++; 
-            GameManager.Instance.ForestUIManager.SetUIDocForMainMenu();
-            GameManager.Instance.currentInventory.Inventory.apples = GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals("Fruit1")).Amount;
+                GameManager.Instance.currentInventory.SpendBeans(item.Price);
+                GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals(item.Name)).Amount++;
+                GameManager.Instance.ForestUIManager.SetUIDocForMainMenu();
+                GameManager.Instance.currentInventory.Inventory.apples = GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals("Golden Fruit")).Amount;
+                amount_label.text = "x" + GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals(item.Name)).Amount.ToString();
+            }
         }
+
     }
 
     void OnReturn()

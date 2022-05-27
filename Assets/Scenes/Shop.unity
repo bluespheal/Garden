@@ -224,6 +224,7 @@ MonoBehaviour:
   _shopItemAsset: {fileID: 9197481963319205126, guid: dfc8240f945cc114aa081a28983855ea, type: 3}
   playerInput: {fileID: 0}
   couscous: {fileID: 1122730749}
+  skip: 0
 --- !u!1 &621596585
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +557,7 @@ MonoBehaviour:
   _neutralDialogue: Welcome!
   _notEnoughMoneyDialogue: Sorry, not enough beans.
   _purchaseDialogue: Thank you for your purchase!
+  _limitDialogue: Sorry, you can't buy anymore of those.
 --- !u!1 &1641684138
 GameObject:
   m_ObjectHideFlags: 0

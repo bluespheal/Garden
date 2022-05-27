@@ -6,12 +6,12 @@ using System;
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
 public class InventoryItem : ScriptableObject
 {
-    private string _name;
-    private string _description;
-    private int _price;
-    private Sprite _sprite;
+    [SerializeField] private string _name;
+    [SerializeField] private string _description;
+    [SerializeField] private int _price;
+    [SerializeField] private Sprite _sprite;
 
-    private int _amount;
+    [SerializeField] private int _amount;
 
     public string Name { get => _name; set => _name = value; }
     public string Description { get => _description; set => _description = value; }
@@ -20,5 +20,14 @@ public class InventoryItem : ScriptableObject
 
     public int Amount { get => _amount; set => _amount = value; }
 
-    public InventoryItem() { }
+    public InventoryItem(SaveInventoryItem saveInventoryItem)
+    {
+        _name = saveInventoryItem._name;
+        _description = saveInventoryItem._description;
+        _price = saveInventoryItem._price;
+        _sprite = saveInventoryItem._sprite;
+        _amount = saveInventoryItem._amount;
+    }
+
 }
+[Serializable] public class InventoryItemList : List<InventoryItem> { }
