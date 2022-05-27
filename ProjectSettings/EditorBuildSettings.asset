@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Bounce.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Garden.unity
+    path: Assets/Scenes/Forest.unity
     guid: b8e1fc5181a84504ba12230571979f52
   - enabled: 1
     path: Assets/Scenes/WitchHouse.unity

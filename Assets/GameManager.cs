@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Xml.Serialization;
 
 public class GameManager : MonoBehaviour
 {
     //Instance
     public static GameManager Instance { get; private set; }
-    public Inventory Inventory { get; private set; }
     //ForestUI
     public ForestUIManager ForestUIManager { get; private set; }
     public AudioManager AudioManager { get; private set; }
@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] public bool paused;
     [SerializeField] public bool canTogglePause;
 
+    [SerializeField]
+    public CurrentInventory currentInventory;
+
+    [SerializeField]
+    GameObject inventoryObj;
 
     private void Awake()
     {
@@ -26,10 +31,13 @@ public class GameManager : MonoBehaviour
         }
         
         Instance = this;
-        Inventory = GetComponentInChildren<Inventory>();
+        //Inventory = GetComponentInChildren<Inventory>();
         AudioManager = GetComponentInChildren<AudioManager>();
         ForestUIManager = GetComponentInChildren<ForestUIManager>();
         SceneChanger = GetComponentInChildren<SceneChanger>();
+
+        InitializeInventoryData();
+        LoadSavedInventory();
 
         DontDestroyOnLoad(gameObject);
 
@@ -39,15 +47,13 @@ public class GameManager : MonoBehaviour
     {
         if (adding)
         {
-            Inventory.AddBeans(number);
+            currentInventory.AddBeans(number);
         }
         else
         {
-            Inventory.SpendBeans(number);
+            currentInventory.SpendBeans(number);
         }
-
         ForestUIManager.UpdateBeanLabel();
-
     }
 
     public void TogglePause()
@@ -78,6 +84,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         AudioListener.pause = false;
         ForestUIManager.HidePauseMenu();
+    }
+
+    public void InitializeInventoryData()
+    {
+    }
+    public void LoadSavedInventory()
+    {
     }
 
     //[RuntimeInitializeOnLoadMethod]

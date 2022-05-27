@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 612494192}
   - component: {fileID: 612494191}
-  - component: {fileID: 612494193}
+  - component: {fileID: 612494195}
   - component: {fileID: 612494194}
   m_Layer: 5
   m_Name: MainUI
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: e75899d88a230de45a97ec9013778507, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: a3328fd1b2a0ba44ea9b963624d6b38d, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: b99bbcd0bf01abd43a29e799f162839f, type: 3}
   m_SortingOrder: 0
 --- !u!4 &612494192
 Transform:
@@ -173,21 +173,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &612494193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 612494190}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fe0684b1f2fd7b46acd5d826a8e023c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _styleSheet: {fileID: 0}
-  _visualTreeAssetItem: {fileID: 0}
-  playerInput: {fileID: 0}
 --- !u!114 &612494194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +203,27 @@ MonoBehaviour:
   m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &612494195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 612494190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb64c1d21ea02646b0ba17f7afa8061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _shopItem_list:
+  - {fileID: 11400000, guid: c69c48d9369241e4fbd84ba4b2c1e180, type: 2}
+  - {fileID: 11400000, guid: 2caa85f760e9c454294010317a6cb0e7, type: 2}
+  - {fileID: 11400000, guid: a92d6b9d976ab50448915c650666eba1, type: 2}
+  - {fileID: 11400000, guid: b549c739332d95c48b8ae8b78841e686, type: 2}
+  _styleSheet: {fileID: 0}
+  _visualTreeAssetItem: {fileID: 9197481963319205126, guid: dfc8240f945cc114aa081a28983855ea, type: 3}
+  playerInput: {fileID: 0}
+  side: 0
 --- !u!1 &621596585
 GameObject:
   m_ObjectHideFlags: 0

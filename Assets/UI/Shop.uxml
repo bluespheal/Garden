@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="Stats" src="project://database/Assets/UI/Stats.uxml?fileID=9197481963319205126&amp;guid=9b46b0d7b5e71e645a918d6db6a905f2&amp;type=3#Stats" />
+    <Style src="project://database/Assets/UI/Shop.uss?fileID=7433441132597879392&amp;guid=77d89b9967457d748ba9ad9388c714f7&amp;type=3#Shop" />
+    <ui:VisualElement style="flex-direction: row; flex-grow: 1;">
+        <ui:ScrollView name="ItemListContainer" style="flex-grow: 1; margin-left: 15px; margin-right: 15px; margin-top: 15px; margin-bottom: 15px; width: auto;" />
+        <ui:Instance template="Stats" name="Stats" style="width: 40%;" />
+    </ui:VisualElement>
+</ui:UXML>

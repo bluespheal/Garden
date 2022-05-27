@@ -39,11 +39,20 @@ public class ForestUIManager : MonoBehaviour
         beanLabel = rootElement.Q<Label>("bean_text");
         enemyLabel = rootElement.Q<Label>("enemy_text");
         heartBar = rootElement.Q<VisualElement>("hp_bar");
+        UpdateBeanLabel();
+    }
+
+    public void SetUIDocForMainMenu()
+    {
+        uiDoc = GameObject.Find("MainUI").GetComponent<UIDocument>();
+        var rootElement = uiDoc.rootVisualElement;
+        beanLabel = rootElement.Q<Label>("bean_text");
+        UpdateBeanLabel();
     }
 
     public void SetHearts()
     {
-        hearts = 2 + GameManager.Instance.Inventory.GetApples();
+        hearts = 2 + GameManager.Instance.currentInventory.Inventory.apples;
         AddHearts();
     }
 
@@ -57,7 +66,7 @@ public class ForestUIManager : MonoBehaviour
 
     public void UpdateBeanLabel()
     {
-        beanText = GameManager.Instance.Inventory.GetBeans().ToString();
+        beanText = GameManager.Instance.currentInventory.Inventory.beans.ToString();
         while (beanText.Length < 5)
         {
             beanText = beanText.Insert(0, "0");

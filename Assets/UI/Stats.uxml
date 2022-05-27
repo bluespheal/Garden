@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Stats.uss?fileID=7433441132597879392&amp;guid=0b7bc9a518018804cb649156a06f6069&amp;type=3#Stats" />
+    <ui:VisualElement name="Stats" style="align-items: flex-end; flex-grow: 1; justify-content: space-between;">
+        <ui:VisualElement name="beans_bar" class="forest_bar beans_bar">
+            <ui:VisualElement name="bean_icon" class="bean_icon" />
+            <ui:Label text="00000" display-tooltip-when-elided="true" name="bean_text" class="forest_bar_text bean_text" />
+        </ui:VisualElement>
+        <ui:Button display-tooltip-when-elided="true" focusable="true" name="BackButton" class="back_button" />
+    </ui:VisualElement>
+</ui:UXML>

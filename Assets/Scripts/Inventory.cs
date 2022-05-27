@@ -1,49 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class Inventory : MonoBehaviour
+[Serializable]
+public class Inventory
 {
-
     [Header("Money")]
-    [SerializeField] private int beans;
+    [SerializeField] public int beans;
     [Header("Upgrades")]
-    [SerializeField] private int apples;
+    [SerializeField] public int apples;
     [Header("Veggies")]
-    [SerializeField] private Veggie[] veggies;
+    [SerializeField] public List<Veggie> veggies_keys = new List<Veggie>();
+    [SerializeField] public List<int> veggies_values = new List<int>();
+    [SerializeField] public Dictionary<Veggie, int> veggies = new Dictionary<Veggie, int>();
     [Header("Seeds")]
-    [SerializeField] private Seed[] seeds;
+    [SerializeField] public List<Seed> seeds_keys = new List<Seed>();
+    [SerializeField] public List<int> seeds_values = new List<int>();
+    [SerializeField] public Dictionary<Seed, int> seeds = new Dictionary<Seed, int>();
     [Header("Furniture")]
+    [SerializeField] public List<Furniture> furniture_keys = new List<Furniture>();
+    [SerializeField] public List<int> furniture_values = new List<int>();
     [SerializeField] 
-    private List<Furniture> _furniture = new List<Furniture>(); //Change to furniture later
-
-    public List<Furniture> FurnitureList => _furniture;
-
+    private Dictionary<Furniture, int> _furniture = new Dictionary<Furniture, int>();
+    public Dictionary<Furniture, int> FurnitureList => _furniture;
     public int GetItemsCount => FurnitureList.Count;
 
-    // Start is called before the first frame update
-    void Start()
+    public Inventory(int beans, int apples, Dictionary<Veggie, int> veggies, Dictionary<Seed, int> seeds)
     {
-
+        this.beans = beans;
+        this.apples = apples;
+        this.veggies = veggies;
+        this.seeds = seeds;
     }
 
-    public int GetApples()
-    {
-        return apples;
-    }
-
-    public int GetBeans()
-    {
-        return beans;
-    }
-
-    public void AddBeans(int number)
-    {
-        beans += number;
-    }
-
-    public void SpendBeans(int number)
-    {
-        beans -= number;
-    }
+    public Inventory() { }
+    
 }

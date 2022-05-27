@@ -68,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 2 + GameManager.Instance.Inventory.GetApples();
+        maxHealth = 2 + GameManager.Instance.currentInventory.Inventory.apples;
         currentHealth = maxHealth;
         busyWFS = new WaitForSeconds(busyLength);
         attackWFS = new WaitForSeconds(attackLength);

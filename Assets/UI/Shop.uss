@@ -1,0 +1,205 @@
+Label {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgb(68, 138, 255);
+}
+
+.item {
+    flex-direction: row;
+    flex-grow: 0;
+    background-color: rgb(125, 73, 208);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left-width: 7px;
+    border-right-width: 7px;
+    border-top-width: 7px;
+    border-bottom-width: 7px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    min-width: auto;
+    min-height: auto;
+}
+
+.item:focus {
+    flex-direction: row;
+    flex-grow: 0;
+    background-color: rgb(181, 149, 231);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left-width: 7px;
+    border-right-width: 7px;
+    border-top-width: 7px;
+    border-bottom-width: 7px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    min-width: auto;
+    min-height: auto;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+.item_image_container {
+    flex-grow: 0;
+    background-image: none;
+    width: auto;
+    height: 100%;
+    background-color: rgb(255, 160, 0);
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.item_image_container_image {
+    background-image: url('project://database/Assets/Sprites/Furniture/Parts/Frog_pot.png?fileID=2800000&guid=6665a63bc1dee0a4ab992e918409d3b1&type=3#Frog_pot');
+    width: 96px;
+    height: 96px;
+}
+
+.item_image_container_name {
+    flex-grow: 1;
+    font-size: 24px;
+    -unity-font-definition: url('project://database/Assets/Fonts/Mansalva-Regular%20SDF.asset?fileID=11400000&guid=39ff55a69c2192f48991beba40f475f9&type=2#Mansalva-Regular SDF');
+    color: rgb(255, 255, 255);
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-font-style: bold;
+}
+
+.item_image_container_number {
+    flex-direction: row;
+    flex-grow: 0;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgb(255, 160, 0);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    max-width: none;
+    margin-left: 13px;
+    flex-shrink: 1;
+    flex-basis: auto;
+    width: auto;
+}
+
+.item_image_container_number_container {
+}
+
+.item_image_number_text {
+    -unity-font-definition: url('project://database/Assets/Fonts/Monofett-Regular%20SDF.asset?fileID=11400000&guid=83f7081ba1f836643837e5b85f409d1d&type=2#Monofett-Regular SDF');
+    font-size: 28px;
+    color: rgb(255, 255, 255);
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    -unity-font-style: bold;
+    -unity-font: url('project://database/Assets/Fonts/Monofett-Regular.ttf?fileID=12800000&guid=d508892cfd8963643914d30070f89c8c&type=3#Monofett-Regular');
+}
+
+.image_description_container {
+    margin-left: 20px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left-width: 4px;
+    border-right-width: 4px;
+    border-top-width: 4px;
+    border-bottom-width: 4px;
+    background-color: rgb(255, 160, 0);
+    flex-grow: 1;
+    min-height: 0;
+    min-width: 0;
+    align-items: flex-start;
+}
+
+.price_tag {
+    flex-direction: row;
+    flex-grow: 0;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgb(255, 160, 0);
+    border-left-width: 3px;
+    border-right-width: 3px;
+    border-top-width: 3px;
+    border-bottom-width: 3px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-left-color: rgb(255, 255, 255);
+    border-right-color: rgb(255, 255, 255);
+    border-top-color: rgb(255, 255, 255);
+    border-bottom-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    max-width: none;
+    margin-left: 13px;
+    flex-shrink: 1;
+    flex-basis: auto;
+    width: 28%;
+}
+
+.description {
+    margin-left: 16px;
+    margin-right: 0;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    font-size: 20px;
+    -unity-font-definition: url('project://database/Assets/Fonts/Margarine-Regular%20SDF.asset?fileID=11400000&guid=7aba615d63448024893e2d131a64b238&type=2#Margarine-Regular SDF');
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    -unity-text-outline-width: 1px;
+    -unity-text-outline-color: rgb(0, 0, 0);
+    flex-wrap: wrap;
+}

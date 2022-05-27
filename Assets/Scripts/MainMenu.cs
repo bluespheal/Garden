@@ -16,6 +16,7 @@ public class MainMenu : MonoBehaviour
     private Button _shop;
     private Button _help;
     private Button _credits;
+    private Button _back;
 
     [SerializeField]
     private StyleSheet _styleSheet;
@@ -23,6 +24,8 @@ public class MainMenu : MonoBehaviour
     private VisualTreeAsset _visualTreeAssetItem;
 
     public PlayerInput playerInput;
+
+    public bool side;
     private void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -40,6 +43,10 @@ public class MainMenu : MonoBehaviour
         _help = _root.Q<Button>("Help");
         _credits = _root.Q<Button>("Credits");
 
+        _back = _root.Q<Button>("BackButton");
+
+
+        GameManager.Instance.ForestUIManager.SetUIDocForMainMenu();
 
         if (_garden != null)
         {
@@ -62,8 +69,22 @@ public class MainMenu : MonoBehaviour
         {
             _shop.clickable.clicked += () =>
             {
-                ChangeSceneFromMenu("Forest");
+                ChangeSceneFromMenu("Shop");
             };
+        }
+    }
+
+    void OnSwitchSide(InputValue value)
+    {
+        if (!side)
+        {
+            side = !side;
+            _back.Focus();
+        }
+        else
+        {
+            _garden.Focus();
+            side = !side;
         }
     }
 

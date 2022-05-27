@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77cf469bdc677914aa02485c623ad62c, type: 3}
-  m_Name: Hydragnea_pot
+  m_Script: {fileID: 11500000, guid: 163205172bad4f44380a241ca0ef7c7e, type: 3}
+  m_Name: Table
   m_EditorClassIdentifier: 
-  _name: Hydrangea
-  _description: Beautiful blue  and purple flowers. They love rain.
-  _price: 3100
-  _sprite: {fileID: 0}
-  _class: 0
+  _name: Mushroom Table
+  _description: A table that looks like a mushroom.
+  _price: 5000
+  _sprite: {fileID: 21300000, guid: 70a07bc7cc1125f49b494e022ea72133, type: 3}
+  amount: 0
