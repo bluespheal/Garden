@@ -15,12 +15,9 @@ MonoBehaviour:
   inventory:
     beans: 124
     apples: 0
-    veggies_keys: []
-    veggies_values: 
-    seeds_keys: []
-    seeds_values: 
-    furniture_keys:
-    - {fileID: 11400000, guid: 9205cfde6082329408edab428603c49f, type: 2}
-    - {fileID: 11400000, guid: b6d2918bfdabab7458c970c995ea2739, type: 2}
-    - {fileID: 11400000, guid: 060195d28f2bafc449465116d026f5e6, type: 2}
-    furniture_values: 000000000000000000000000
+    _items:
+    - {fileID: 11400000, guid: ecb41ada3a9e97d4495f09db3dedae8a, type: 2}
+    - {fileID: 11400000, guid: 8612f9c676ff9ac40ad3ce391d9bf9f8, type: 2}
+    - {fileID: 11400000, guid: 06862d309c3edbf4e926adb5080576d3, type: 2}
+    - {fileID: 11400000, guid: de184d8097b1d7542aaff3e2bbefe66d, type: 2}
+    - {fileID: 11400000, guid: c4c9b4594a0b52440a3630ddfbd6aca9, type: 2}

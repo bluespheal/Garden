@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Xml.Serialization;
-
+using Core.SaveDataManager;
 public class GameManager : MonoBehaviour
 {
     //Instance
@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
             currentInventory.SpendBeans(number);
         }
         ForestUIManager.UpdateBeanLabel();
+        SaveDataManager.SaveGame(currentInventory.Inventory);
     }
 
     public void TogglePause()
@@ -88,9 +89,11 @@ public class GameManager : MonoBehaviour
 
     public void InitializeInventoryData()
     {
+        SaveDataManager.NewGame();
     }
     public void LoadSavedInventory()
     {
+        SaveDataManager.LoadGame();
     }
 
     //[RuntimeInitializeOnLoadMethod]

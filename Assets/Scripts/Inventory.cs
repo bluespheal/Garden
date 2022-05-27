@@ -7,31 +7,34 @@ using System;
 public class Inventory
 {
     [Header("Money")]
-    [SerializeField] public int beans;
+    public int beans;
     [Header("Upgrades")]
-    [SerializeField] public int apples;
-    [Header("Veggies")]
-    [SerializeField] public List<Veggie> veggies_keys = new List<Veggie>();
-    [SerializeField] public List<int> veggies_values = new List<int>();
-    [SerializeField] public Dictionary<Veggie, int> veggies = new Dictionary<Veggie, int>();
-    [Header("Seeds")]
-    [SerializeField] public List<Seed> seeds_keys = new List<Seed>();
-    [SerializeField] public List<int> seeds_values = new List<int>();
-    [SerializeField] public Dictionary<Seed, int> seeds = new Dictionary<Seed, int>();
-    [Header("Furniture")]
-    [SerializeField] public List<Furniture> furniture_keys = new List<Furniture>();
-    [SerializeField] public List<int> furniture_values = new List<int>();
-    [SerializeField] 
-    private Dictionary<Furniture, int> _furniture = new Dictionary<Furniture, int>();
-    public Dictionary<Furniture, int> FurnitureList => _furniture;
-    public int GetItemsCount => FurnitureList.Count;
+    public int apples;
 
-    public Inventory(int beans, int apples, Dictionary<Veggie, int> veggies, Dictionary<Seed, int> seeds)
+    [Header("Items")]
+    public List<InventoryItem> _items = new List<InventoryItem>();
+
+    //[Header("Veggies")]
+    //public List<Veggie> veggies_keys = new List<Veggie>();
+    //public List<int> veggies_values = new List<int>();
+    //public Dictionary<Veggie, int> veggies = new Dictionary<Veggie, int>();
+    //[Header("Seeds")]
+    //public List<Seed> seeds_keys = new List<Seed>();
+    //public List<int> seeds_values = new List<int>();
+    //public Dictionary<Seed, int> seeds = new Dictionary<Seed, int>();
+    //[Header("Furniture")]
+    //public List<Furniture> furniture_keys = new List<Furniture>();
+    //public List<int> furniture_values = new List<int>();
+    //
+    //private Dictionary<Furniture, int> _furniture = new Dictionary<Furniture, int>();
+    //public Dictionary<Furniture, int> FurnitureList => _furniture;
+    //public int GetItemsCount => FurnitureList.Count;
+
+    public Inventory(int beans, int apples, List<InventoryItem> items)
     {
         this.beans = beans;
         this.apples = apples;
-        this.veggies = veggies;
-        this.seeds = seeds;
+        this._items = items;
     }
 
     public Inventory() { }

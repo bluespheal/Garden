@@ -8,27 +8,24 @@ using UnityEngine.InputSystem;
 public class ShopMenu : MonoBehaviour
 {
     private UIDocument _uIDocument;
-    private VisualElement _mainMenu;
     private VisualElement _root;
     private ScrollView _item_list_container;
     private Button first_item;
     [SerializeField]
-    private List<Button> _item_list;
-    [SerializeField]
-    private List<ShopItem> _shopItem_list;
+    private List<InventoryItem> _shopItem_list;
 
     private Button _back;
 
     [SerializeField]
-    private StyleSheet _styleSheet;
-    [SerializeField]
-    private VisualTreeAsset _visualTreeAssetItem;
+    private VisualTreeAsset _shopItemAsset;
 
     public PlayerInput playerInput;
 
-    public bool side;
+    public Couscous couscous;
+
     private void Start()
     {
+        _shopItem_list.Reverse();
         playerInput = GetComponent<PlayerInput>();
         GameManager.Instance.ResumeTheGame();
         GameManager.Instance.canTogglePause = true;
@@ -37,13 +34,22 @@ public class ShopMenu : MonoBehaviour
         _root = _uIDocument.rootVisualElement;
         _item_list_container = _root.Q<ScrollView>("ItemListContainer");
 
+        GameManager.Instance.ForestUIManager.SetUIDocForMainMenu();
 
         _back = _root.Q<Button>("BackButton");
 
-        foreach (ShopItem shopItem in _shopItem_list)
+        SetupShopItems();
+
+        first_item = (Button)_item_list_container.ElementAt(0);
+        first_item.Focus();
+    }
+
+    void SetupShopItems()
+    {
+        foreach (InventoryItem inventoryItem in _shopItem_list)
         {
-            print(shopItem._name);
-            TemplateContainer myUI = _visualTreeAssetItem.Instantiate();
+            TemplateContainer myUI = _shopItemAsset.Instantiate();
+
             Button _item = myUI.Q<Button>("Item");
             VisualElement _itemImage = _item.Q<VisualElement>("ItemImage");
             Label _itemName = _item.Q<Label>("ItemName");
@@ -51,53 +57,52 @@ public class ShopMenu : MonoBehaviour
             Label _itemPrice = _item.Q<Label>("ItemPrice");
             Label _itemDescription = _item.Q<Label>("ItemDescription");
 
-            _itemImage.style.backgroundImage = new StyleBackground(shopItem._sprite);
-            _itemName.text = shopItem._name;
-            _itemNumber.text = "x0";
-            _itemPrice.text = shopItem._price;
-            _itemDescription.text = shopItem._description;
+            _itemImage.style.backgroundImage = new StyleBackground(inventoryItem.Sprite);
+            _itemName.text = inventoryItem.Name;
+            _itemNumber.text = "x" + inventoryItem.Amount.ToString();
+            _itemPrice.text = inventoryItem.Price.ToString();
+            _itemDescription.text = inventoryItem.Description;
             _item.focusable = true;
-
+            _item.clickable.clicked += () =>
+            {
+                BuyItem(inventoryItem);
+            };
             _item_list_container.Insert(0, _item);
         }
-
-        GameManager.Instance.ForestUIManager.SetUIDocForMainMenu();
-
-        first_item = (Button)_item_list_container.ElementAt(0);
-
-        if (first_item != null)
-        {
-            first_item.Focus();
-            first_item.clickable.clicked += () =>
-            {
-                ChangeSceneFromMenu("Garden");
-            };
-        }
-
     }
 
-    void OnSwitchSide(InputValue value)
+    void BuyItem(InventoryItem item)
     {
-        if (!side)
+        if(GameManager.Instance.currentInventory.Inventory.apples >= 3)
         {
-            side = !side;
-            _back.Focus();
+            couscous.LimitDialogue();
+            return;
+        }
+
+        if (GameManager.Instance.currentInventory.Inventory.beans < item.Price)
+        {
+            couscous.NotEnoughMoneyDialogue();
+            return;
         }
         else
         {
-            first_item.Focus();
-            side = !side;
+            couscous.PurchaseDialogue();
+
+            GameManager.Instance.currentInventory.SpendBeans(item.Price);
+            GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals(item.Name)).Amount++; 
+            GameManager.Instance.ForestUIManager.SetUIDocForMainMenu();
+            GameManager.Instance.currentInventory.Inventory.apples = GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals("Fruit1")).Amount;
         }
+    }
+
+    void OnReturn()
+    {
+        ChangeSceneFromMenu("MainMenu");
     }
 
     void ChangeSceneFromMenu(string scene)
     {
         GameManager.Instance.SceneChanger.ChangeLevel(scene);
     }
-
-    private void OnEnable()
-    {
-    }
-
 
 }

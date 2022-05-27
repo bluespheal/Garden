@@ -1,0 +1,58 @@
+Label {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgb(68, 138, 255);
+}
+
+.cous_text {
+    font-size: 31px;
+    -unity-font-style: normal;
+    flex-wrap: nowrap;
+    white-space: normal;
+    -unity-text-align: upper-left;
+    padding-left: 14px;
+    padding-right: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    -unity-font-definition: url('project://database/Assets/Fonts/Mansalva-Regular%20SDF.asset?fileID=11400000&guid=39ff55a69c2192f48991beba40f475f9&type=2#Mansalva-Regular SDF');
+    color: rgba(0, 0, 0, 255);
+}
+
+.cous_bubble {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    background-color: rgb(255, 255, 255);
+    border-top-left-radius: 79px;
+    border-bottom-left-radius: 79px;
+    border-top-right-radius: 79px;
+    border-bottom-right-radius: 79px;
+    border-left-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-top-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-left-width: 11px;
+    border-right-width: 11px;
+    border-top-width: 11px;
+    border-bottom-width: 11px;
+    -unity-font-definition: url('project://database/Assets/Fonts/Mansalva-Regular%20SDF.asset?fileID=11400000&guid=39ff55a69c2192f48991beba40f475f9&type=2#Mansalva-Regular SDF');
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    right: 13%;
+    top: 14%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    -unity-text-align: upper-left;
+    white-space: normal;
+}

@@ -1,28 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-[System.Serializable]
-public class InventoryItem
+[CreateAssetMenu(fileName = "New Item", menuName = "Item")]
+public class InventoryItem : ScriptableObject
 {
-    [SerializeField] private int _value;
-    [SerializeField] private int _name;
-    [SerializeField] private int _description;
-    [SerializeField] private Sprite _sprite;
+    private string _name;
+    private string _description;
+    private int _price;
+    private Sprite _sprite;
 
-    public int Value { get => _value; set => _value = value; }
-    public int Name { get => _name; set => _name = value; }
-    public int Description { get => _description; set => _description = value; }
+    private int _amount;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public string Name { get => _name; set => _name = value; }
+    public string Description { get => _description; set => _description = value; }
+    public int Price { get => _price; set => _price = value; }
+    public Sprite Sprite { get => _sprite; set => _sprite = value; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int Amount { get => _amount; set => _amount = value; }
+
+    public InventoryItem() { }
 }

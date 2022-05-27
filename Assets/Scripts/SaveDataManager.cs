@@ -14,7 +14,7 @@ namespace Core.SaveDataManager
             string pathCombined = Path.Combine(Application.persistentDataPath, "SaveData" + ".data");
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Create(pathCombined);
-            bf.Serialize(file, new Inventory(0, 0, new Dictionary<Veggie, int>(), new Dictionary<Seed, int>()));
+            bf.Serialize(file, new Inventory(0, 0, new List<InventoryItem>()));
             file.Close();
         }
 
