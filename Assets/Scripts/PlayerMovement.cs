@@ -6,69 +6,99 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [Header("Stats")]
-    [SerializeField] public int maxHealth;
-    [SerializeField] public int currentHealth;
+    [SerializeField] 
+    private int maxHealth;
+    [SerializeField] 
+    private int currentHealth;
 
     [Header("Graphics")]
-    [SerializeField] private SpriteRenderer spriteRenderer;
-    [SerializeField] private Transform leftLimit;
-    [SerializeField] private Transform rightLimit;
+    [SerializeField] 
+    private SpriteRenderer spriteRenderer;
+    [SerializeField] 
+    private Transform leftLimit;
+    [SerializeField] 
+    private Transform rightLimit;
     float xPos;
-    [SerializeField] private bool flipped;
-    [SerializeField] private int flippedInt;
+    [SerializeField] 
+    private bool flipped;
+    [SerializeField] 
+    private int flippedInt;
     public Animator animator;
 
     [Header("Move")]
-    [SerializeField] Vector3 moveVal;
-    [SerializeField] float moveSpeed;
+    [SerializeField] 
+    Vector3 moveVal;
+    [SerializeField] 
+    float moveSpeed;
 
     [Header("Slide")]
-    [SerializeField] private bool sliding;
-    [SerializeField] float slideSpeed;
-    [SerializeField] float slideLength;
-    [SerializeField] GameObject slideHitbox;
-    [SerializeField] GameObject head;
-    [SerializeField] GameObject lowHead;
+    [SerializeField] 
+    private bool sliding;
+    [SerializeField] 
+    float slideSpeed;
+    [SerializeField] 
+    float slideLength;
+    [SerializeField] 
+    GameObject slideHitbox;
+    [SerializeField] 
+    GameObject head;
+    [SerializeField] 
+    GameObject lowHead;
 
     WaitForSeconds slideWFS;
 
     [Header("Attack")]
-    [SerializeField] private bool attacking;
-    [SerializeField] public GameObject broom;
-    [SerializeField] public Animator broomAnimator;
-    [SerializeField] float attackLength;
-    [SerializeField] GameObject attackHitbox;
+    [SerializeField] 
+    private bool attacking;
+    [SerializeField] 
+    public GameObject broom;
+    [SerializeField] 
+    public Animator broomAnimator;
+    [SerializeField] 
+    float attackLength;
+    [SerializeField] 
+    GameObject attackHitbox;
     WaitForSeconds attackWFS;
 
     [Header("Busy")]
-    [SerializeField] private bool busy;
-    [SerializeField] private float busyLength;
+    [SerializeField] 
+    private bool busy;
+    [SerializeField] 
+    private float busyLength;
     WaitForSeconds busyWFS;
 
     [Header("Flinch")]
-    [SerializeField] private bool flinching;
-    [SerializeField] private float flinchTime;
+    [SerializeField] 
+    private bool flinching;
+    [SerializeField] 
+    private float flinchTime;
     WaitForSeconds flinchWFS;
 
     [Header("Damage")]
-    [SerializeField] private bool hurting;
-    [SerializeField] private float hurtTime;
+    [SerializeField] 
+    private bool hurting;
+    [SerializeField] 
+    private float hurtTime;
     WaitForSeconds hurtingWFS;
 
     [Header("Blinking")]
-    [SerializeField] private bool blinking;
-    [SerializeField] private float blinkTime;
+    [SerializeField] 
+    private bool blinking;
+    [SerializeField] 
+    private float blinkTime;
     WaitForSeconds blinkingWFS;
 
     [Header("Dead")]
-    [SerializeField] private bool dying;
-    [SerializeField] private float deathTime;
+    [SerializeField] 
+    private bool dying;
+    [SerializeField] 
+    private float deathTime;
     WaitForSeconds dyingWFS;
 
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 2 + GameManager.Instance.currentInventory.Inventory.apples;
+        maxHealth = 2 + GameManager.Instance.currentInventory.Inventory.Apples;
         currentHealth = maxHealth;
         busyWFS = new WaitForSeconds(busyLength);
         attackWFS = new WaitForSeconds(attackLength);

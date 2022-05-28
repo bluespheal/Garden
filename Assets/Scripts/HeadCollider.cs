@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class HeadCollider : MonoBehaviour
 {
-    public PlayerMovement player;
-    public Veggie veggie;
+    [SerializeField]
+    private PlayerMovement player;
+    [SerializeField]
+    private Veggie veggie;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,6 +27,6 @@ public class HeadCollider : MonoBehaviour
 
     float CalculateForce(float magnitude)
     {
-        return ((veggie.veggie_weight) * magnitude);
+        return ((veggie.VeggieWeight) * magnitude);
     }
 }

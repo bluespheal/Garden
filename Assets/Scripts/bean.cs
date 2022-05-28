@@ -6,18 +6,25 @@ using UnityEngine.VFX;
 public class bean : MonoBehaviour
 {
     [Header("Values")]
-    [SerializeField] List<int> values;
+    [SerializeField]
+    private List<int> values;
 
     [Header("Sprites")]
-    [SerializeField] List<Sprite> sprites;
+    [SerializeField]
+    private List<Sprite> sprites;
 
     [Header("Chances")]
-    public List<float> chances;
+    [SerializeField]
+    private List<float> chances;
 
-    public float random;
-    public VisualEffect collectVfx;
+    [SerializeField]
+    private float random;
+    [SerializeField]
+    private VisualEffect collectVfx;
 
+    [SerializeField]
     private bool collected;
+    [SerializeField]
     private Animator anim;
 
     private int value;

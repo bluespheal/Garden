@@ -22,11 +22,11 @@ public class InventoryItem : ScriptableObject
 
     public InventoryItem(SaveInventoryItem saveInventoryItem)
     {
-        _name = saveInventoryItem._name;
-        _description = saveInventoryItem._description;
-        _price = saveInventoryItem._price;
-        _sprite = saveInventoryItem._sprite;
-        _amount = saveInventoryItem._amount;
+        _name = saveInventoryItem.Name;
+        _description = saveInventoryItem.Description;
+        _price = saveInventoryItem.Price;
+        _sprite = saveInventoryItem.Sprite;
+        _amount = saveInventoryItem.Amount;
     }
 
 }

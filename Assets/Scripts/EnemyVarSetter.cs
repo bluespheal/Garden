@@ -37,7 +37,7 @@ public class EnemyVarSetter : MonoBehaviour
         player = GameObject.Find("Millet");
         enemySFM = gameObject.GetComponent<PlayMakerFSM>();
         gameplayManager = GameObject.Find("GameplayManager").GetComponent<GameplayManager>();
-        veggie_power = GameObject.Find("Veggie").GetComponent<Veggie>().veggie_power;
+        veggie_power = GameObject.Find("Veggie").GetComponent<Veggie>().VeggiePower;
         SetEnemyStats();
     }
     private void SetMultipliers()
@@ -65,7 +65,7 @@ public class EnemyVarSetter : MonoBehaviour
         enemySFM.FsmVariables.GetFsmInt("BeanNumber").Value = currentBean;
         enemySFM.FsmVariables.GetFsmFloat("BaseSpeed").Value = currentSpeed;
         enemySFM.FsmVariables.GetFsmFloat("EnemyHealth").Value = currentHealth;
-        enemySFM.FsmVariables.GetFsmFloat("Volume").Value = GameManager.Instance.AudioManager.sfxVolume;
+        enemySFM.FsmVariables.GetFsmFloat("Volume").Value = GameManager.Instance.AudioManager.SfxVolume;
     }
 
 

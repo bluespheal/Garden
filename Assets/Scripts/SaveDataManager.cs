@@ -51,8 +51,8 @@ namespace Core.SaveDataManager
 
                 Inventory ninv = new Inventory();
 
-                ninv.beans = inv.beans;
-                ninv.apples = inv.apples;
+                ninv.Beans = inv.Beans;
+                ninv.Apples = inv.Apples;
 
                 foreach(SaveInventoryItem item in inv.items)
                 {

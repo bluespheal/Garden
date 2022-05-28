@@ -7,12 +7,15 @@ using System;
 public class Inventory
 {
     [Header("Money")]
-    public int beans;
+    private int beans;
     [Header("Upgrades")]
-    public int apples;
+    private int apples;
 
     [Header("Items")]
     public List<InventoryItem> _items = new List<InventoryItem>();
+
+    public int Beans { get => beans; set => beans = value; }
+    public int Apples { get => apples; set => apples = value; }
 
     //[Header("Veggies")]
     //public List<Veggie> veggies_keys = new List<Veggie>();

@@ -5,8 +5,8 @@ using UnityEngine.VFX;
 
 public class EnemyExplode : MonoBehaviour
 {
-
-    public VisualEffect defeatVfx;
+    [SerializeField]
+    private VisualEffect defeatVfx;
 
     public void PlayDefeatVFX()
     {

@@ -52,7 +52,7 @@ public class ForestUIManager : MonoBehaviour
 
     public void SetHearts()
     {
-        hearts = 2 + GameManager.Instance.currentInventory.Inventory.apples;
+        hearts = 2 + GameManager.Instance.currentInventory.Inventory.Apples;
         AddHearts();
     }
 
@@ -66,7 +66,7 @@ public class ForestUIManager : MonoBehaviour
 
     public void UpdateBeanLabel()
     {
-        beanText = GameManager.Instance.currentInventory.Inventory.beans.ToString();
+        beanText = GameManager.Instance.currentInventory.Inventory.Beans.ToString();
         while (beanText.Length < 5)
         {
             beanText = beanText.Insert(0, "0");

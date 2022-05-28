@@ -4,21 +4,28 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AudioSource musicSource;
-    public AudioSource sfxSource;
+    [SerializeField]
+    private AudioSource musicSource;
+    [SerializeField]
+    private AudioSource sfxSource;
 
-    public AudioClip[] musicClipArray;
-    public AudioClip[] sfxClipArray;
+    [SerializeField]
+    private AudioClip[] musicClipArray;
+    [SerializeField]
+    private AudioClip[] sfxClipArray;
 
-    [SerializeField]public float musicVolume;
-    [SerializeField]public float sfxVolume;
+    [SerializeField]
+    private float musicVolume;
+    [SerializeField]
+    private float sfxVolume;
+
+    public float SfxVolume { get => sfxVolume; set => sfxVolume = value; }
+
 
     private void Start()
     {
         musicSource.volume = musicVolume;
     }
-
-
 
     private AudioClip GetMusicClip(int clip)
     {

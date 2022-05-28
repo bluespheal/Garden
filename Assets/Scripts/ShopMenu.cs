@@ -19,11 +19,12 @@ public class ShopMenu : MonoBehaviour
     [SerializeField]
     private VisualTreeAsset _shopItemAsset;
 
-    public PlayerInput playerInput;
+    [SerializeField]
+    private PlayerInput playerInput;
 
-    public Couscous couscous;
+    [SerializeField]
+    private Couscous couscous;
 
-    public bool skip;
     private void Start()
     {
         _shopItem_list.Reverse();
@@ -74,29 +75,27 @@ public class ShopMenu : MonoBehaviour
 
     void BuyItem(InventoryItem item, Label amount_label)
     {
-        if(GameManager.Instance.currentInventory.Inventory.apples >= 3 && item.Name == "Golden Fruit")
+        if(GameManager.Instance.currentInventory.Inventory.Apples >= 3 && item.Name == "Golden Fruit")
         {
             couscous.LimitDialogue();
             return;
         }
 
+
+        if (GameManager.Instance.currentInventory.Inventory.Beans < item.Price)
         {
-            if (GameManager.Instance.currentInventory.Inventory.beans < item.Price)
-            {
-                couscous.NotEnoughMoneyDialogue();
-            }
-            else
-            {
-                couscous.PurchaseDialogue();
-
-                GameManager.Instance.currentInventory.SpendBeans(item.Price);
-                GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals(item.Name)).Amount++;
-                GameManager.Instance.ForestUIManager.SetUIDocForMainMenu();
-                GameManager.Instance.currentInventory.Inventory.apples = GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals("Golden Fruit")).Amount;
-                amount_label.text = "x" + GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals(item.Name)).Amount.ToString();
-            }
+            couscous.NotEnoughMoneyDialogue();
         }
+        else
+        {
+            couscous.PurchaseDialogue();
 
+            GameManager.Instance.currentInventory.SpendBeans(item.Price);
+            GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals(item.Name)).Amount++;
+            GameManager.Instance.ForestUIManager.SetUIDocForMainMenu();
+            GameManager.Instance.currentInventory.Inventory.Apples = GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals("Golden Fruit")).Amount;
+            amount_label.text = "x" + GameManager.Instance.currentInventory.Inventory._items.Find(x => x.Name.Equals(item.Name)).Amount.ToString();
+        }
     }
 
     void OnReturn()

@@ -11,11 +11,11 @@ public class CurrentInventory : ScriptableObject {
     
     public void AddBeans(int number)
     {
-        Inventory.beans += number;
+        Inventory.Beans += number;
     }
 
     public void SpendBeans(int number)
     {
-        Inventory.beans -= number;
+        Inventory.Beans -= number;
     }
 }
