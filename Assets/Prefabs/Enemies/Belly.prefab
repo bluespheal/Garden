@@ -633,7 +633,7 @@ MonoBehaviour:
           tooltip: 
           showInInspector: 0
           networkSync: 0
-          value: 0.9425287
+          value: 0.8783784
         - useVariable: 1
           name: 
           tooltip: 
@@ -814,7 +814,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - 
+        - FINISHED
         - Damage
         byteData: 0000000000
         arrayParamSizes: 

@@ -720,7 +720,7 @@ MonoBehaviour:
         fsmRectParams: []
         fsmQuaternionParams: []
         stringParams:
-        - 
+        - FINISHED
         - Damage
         byteData: 0000000000
         arrayParamSizes: 
