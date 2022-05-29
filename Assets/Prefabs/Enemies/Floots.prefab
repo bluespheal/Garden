@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5798020052584015155}
   - component: {fileID: 5798020052584015165}
   - component: {fileID: 5798020052584015164}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: EnemyDefeat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 5798020053409528092}
   - component: {fileID: 5798020053409528093}
   - component: {fileID: 5798020053409528094}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Floots
   m_TagString: Enemy
   m_Icon: {fileID: 0}

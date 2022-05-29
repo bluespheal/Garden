@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6767551222467627145}
   - component: {fileID: 6767551222467627146}
   - component: {fileID: 9037612234896848455}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Yuni
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -2079,7 +2079,7 @@ GameObject:
   - component: {fileID: 6767551223831556607}
   - component: {fileID: 6767551223831556605}
   - component: {fileID: 6767551223831556606}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: EnemyDefeat
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5384999124296444220}
   - component: {fileID: 5384999124296444222}
   - component: {fileID: 5384999124296444221}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: EnemyDefeat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 5384999125088882762}
   - component: {fileID: 5384999125088882761}
   - component: {fileID: 7655129423645503108}
-  m_Layer: 7
+  m_Layer: 9
   m_Name: Jelly
   m_TagString: Enemy
   m_Icon: {fileID: 0}
