@@ -5,9 +5,13 @@ using UnityEngine.VFX;
 
 public class HeartFruit : MonoBehaviour
 {
+    [SerializeField]
     private VisualEffect collectVfx;
+    [SerializeField]
     private PlayerMovement player;
+    [SerializeField]
     private bool collected;
+    [SerializeField]
     private Animator anim;
 
     // Start is called before the first frame update

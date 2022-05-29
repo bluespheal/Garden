@@ -4415,6 +4415,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5398715417680219451, guid: 2604b5d22b9e9494d982d4630b97f87e, type: 3}
+      propertyPath: currentInventory
+      value: 
+      objectReference: {fileID: 11400000, guid: f18c6321096015f428b6201dcfe15d14, type: 2}
     - target: {fileID: 5398715419025926495, guid: 2604b5d22b9e9494d982d4630b97f87e, type: 3}
       propertyPath: uiDoc
       value: 
