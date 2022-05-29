@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
     }
     public void LoadSavedInventory()
     {
-        SaveDataManager.LoadGame();
+        currentInventory.Inventory = SaveDataManager.LoadGame();
     }
 
     //[RuntimeInitializeOnLoadMethod]

@@ -35,6 +35,10 @@ namespace Core.SaveDataManager
         public static void SaveGame(Inventory inventory)
         {
             string pathCombined = Path.Combine(Application.persistentDataPath, "SaveData" + ".data");
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Create(pathCombined);
+            bf.Serialize(file, inventory);
+            file.Close();
         }
 
         public static Inventory LoadGame()

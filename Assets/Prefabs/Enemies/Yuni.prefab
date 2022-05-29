@@ -16,6 +16,9 @@ GameObject:
   - component: {fileID: 6767551222467627145}
   - component: {fileID: 6767551222467627146}
   - component: {fileID: 9037612234896848455}
+  - component: {fileID: 7728573047007414457}
+  - component: {fileID: 6493358648706958980}
+  - component: {fileID: 5116954309816747596}
   m_Layer: 9
   m_Name: Yuni
   m_TagString: Enemy
@@ -1968,7 +1971,7 @@ MonoBehaviour:
     manualUpdate: 0
     outVariableIndices: 
     keepDelayedEventsOnStateExit: 0
-    preprocessed: 0
+    preprocessed: 1
     ExposedEvents: []
     OutputEvents: []
     RestartOnEnable: 1
@@ -1981,8 +1984,8 @@ MonoBehaviour:
     handleLevelLoaded: 0
     handleTriggerEnter2D: 0
     handleTriggerExit2D: 0
-    handleTriggerStay2D: 0
-    handleCollisionEnter2D: 0
+    handleTriggerStay2D: 1
+    handleCollisionEnter2D: 1
     handleCollisionExit2D: 0
     handleCollisionStay2D: 0
     handleTriggerEnter: 0
@@ -1996,7 +1999,7 @@ MonoBehaviour:
     handleJointBreak: 0
     handleJointBreak2D: 0
     handleOnGUI: 0
-    handleFixedUpdate: 0
+    handleFixedUpdate: 1
     handleLateUpdate: 0
     handleApplicationEvents: 0
     handleUiEvents: 0
@@ -2004,7 +2007,7 @@ MonoBehaviour:
     handleAnimatorMove: 0
     handleAnimatorIK: 0
   fsmTemplate: {fileID: 0}
-  eventHandlerComponentsAdded: 0
+  eventHandlerComponentsAdded: 1
 --- !u!50 &6767551222467627145
 Rigidbody2D:
   serializedVersion: 4
@@ -2068,6 +2071,48 @@ MonoBehaviour:
   speedAdd: 0
   currentBean: 0
   beanAdd: 0
+--- !u!114 &7728573047007414457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767551222467628915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -967985445, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetFSMs:
+  - {fileID: 6767551222467627144}
+--- !u!114 &6493358648706958980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767551222467628915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1043544612, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetFSMs:
+  - {fileID: 6767551222467627144}
+--- !u!114 &5116954309816747596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6767551222467628915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -664232604, guid: e743331561ef77147ae48cda9bcb8209, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetFSMs:
+  - {fileID: 6767551222467627144}
 --- !u!1 &6767551223831556604
 GameObject:
   m_ObjectHideFlags: 0
