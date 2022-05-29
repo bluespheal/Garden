@@ -25,18 +25,22 @@ namespace Core.SaveDataManager
 
             foreach (InventoryItem xItem in itemList)
             {
+                Debug.Log(xItem.Name);
                 wrappedList.Add(new SaveInventoryItem(xItem));
             }
 
             bf.Serialize(file, new SaveInventory(inv));
+            Debug.Log("Save initialized at: " + pathCombined);
             file.Close();
         }
 
-        public static void SaveGame(Inventory inventory)
+        public static void SaveGame(SaveInventory inventory)
         {
             string pathCombined = Path.Combine(Application.persistentDataPath, "SaveData" + ".data");
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Create(pathCombined);
+            Debug.Log("Saving at: " + pathCombined);
+            Debug.Log("Save:" + inventory.Beans);
             bf.Serialize(file, inventory);
             file.Close();
         }
@@ -64,6 +68,10 @@ namespace Core.SaveDataManager
                 }
 
                 Inventory currentInventory = ninv;
+
+                Debug.Log("Loaded: " + pathCombined);
+                Debug.Log("File:" + ninv.Beans);
+
                 file.Close();
                 return currentInventory;
             }
