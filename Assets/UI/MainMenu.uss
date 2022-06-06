@@ -72,5 +72,10 @@ Label {
 }
 
 .back_button:focus {
-    background-color: rgba(145, 106, 207, 255);
+    background-color: rgb(145, 106, 207);
+}
+
+.disabled_button {
+    background-color: rgb(47, 37, 63);
+    color: rgb(115, 115, 115);
 }

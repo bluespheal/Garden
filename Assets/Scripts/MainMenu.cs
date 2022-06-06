@@ -28,6 +28,8 @@ public class MainMenu : MonoBehaviour
     public bool side;
     private void Start()
     {
+        GameManager.Instance.AudioManager.PlaySong(0);
+
         playerInput = GetComponent<PlayerInput>();
 
         GameManager.Instance.ResumeTheGame();
@@ -45,20 +47,12 @@ public class MainMenu : MonoBehaviour
 
         _back = _root.Q<Button>("BackButton");
 
-
         GameManager.Instance.ForestUIManager.SetUIDocForMainMenu();
-
-        if (_garden != null)
-        {
-            _garden.Focus();
-            _garden.clickable.clicked += () =>
-            {
-                ChangeSceneFromMenu("Garden");
-            };
-        }
 
         if (_forest != null)
         {
+            _forest.Focus();
+
             _forest.clickable.clicked += () =>
             {
                 ChangeSceneFromMenu("Forest");
@@ -72,22 +66,19 @@ public class MainMenu : MonoBehaviour
                 ChangeSceneFromMenu("Shop");
             };
         }
-    }
 
-    void OnSwitchSide(InputValue value)
+        if (_credits != null)
+        {
+            _credits.clickable.clicked += () =>
+            {
+                ChangeSceneFromMenu("Credits");
+            };
+        }
+    }
+    void OnCancel()
     {
-        if (!side)
-        {
-            side = !side;
-            _back.Focus();
-        }
-        else
-        {
-            _garden.Focus();
-            side = !side;
-        }
+        ChangeSceneFromMenu("TitleScreen");
     }
-
     void ChangeSceneFromMenu(string scene)
     {
         GameManager.Instance.SceneChanger.ChangeLevel(scene);

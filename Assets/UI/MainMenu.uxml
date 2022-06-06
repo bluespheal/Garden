@@ -3,11 +3,11 @@
     <Style src="project://database/Assets/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=f8952dcd4655e5642bbd2484ca7c0678&amp;type=3#MainMenu" />
     <ui:VisualElement name="MainMenu" style="background-image: url(&apos;project://database/Assets/Sprites/House.png?fileID=2800000&amp;guid=49ebd1619206efe419733565431548c2&amp;type=3#House&apos;); width: 100%; height: 100%; flex-direction: row;">
         <ui:VisualElement name="OptionsMenu" style="width: 48%;">
-            <ui:Button text="Garden" display-tooltip-when-elided="true" name="Garden" class="main_menu_button" />
+            <ui:Button text="Garden" display-tooltip-when-elided="true" name="Garden" focusable="false" class="main_menu_button disabled_button" />
             <ui:Button text="Forest" display-tooltip-when-elided="true" name="Forest" class="main_menu_button" />
-            <ui:Button text="House" display-tooltip-when-elided="true" name="House" class="main_menu_button" />
+            <ui:Button text="House" display-tooltip-when-elided="true" name="House" focusable="false" class="main_menu_button disabled_button" />
             <ui:Button text="Shop" display-tooltip-when-elided="true" name="Shop" class="main_menu_button" />
-            <ui:Button text="Help" display-tooltip-when-elided="true" name="Help" class="main_menu_button" />
+            <ui:Button text="Help" display-tooltip-when-elided="true" name="Help" focusable="false" class="main_menu_button disabled_button" />
             <ui:Button text="Credits" display-tooltip-when-elided="true" name="Credits" class="main_menu_button" />
         </ui:VisualElement>
         <ui:Instance template="Stats" name="Stats" style="flex-grow: 1;" />

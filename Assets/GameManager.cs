@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
             currentInventory.SpendBeans(number);
         }
         ForestUIManager.UpdateBeanLabel();
-        SaveDataManager.SaveGame(currentInventory.Inventory);
+        //SaveDataManager.SaveGame(currentInventory.Inventory);
     }
 
     public void TogglePause()

@@ -66,6 +66,10 @@ public class ForestUIManager : MonoBehaviour
 
     public void UpdateBeanLabel()
     {
+        if (beanLabel == null)
+        {
+            return;
+        }
         beanText = GameManager.Instance.currentInventory.Inventory.Beans.ToString();
         while (beanText.Length < 5)
         {
