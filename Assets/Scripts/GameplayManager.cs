@@ -44,35 +44,35 @@ public class GameplayManager : MonoBehaviour
         if (enemiesDefeated < 10)
         {
             RecalculateEnemyLevels(0, 0);
-            RecalculateSpawnTimer(6, 10);
+            RecalculateSpawnTimer(5, 9);
             UpdateEnemyLevels();
             return;
         }
         else if (enemiesDefeated < 30) 
         {
             RecalculateEnemyLevels(0, 1);
-            RecalculateSpawnTimer(6, 10);
+            RecalculateSpawnTimer(5, 9);
             UpdateEnemyLevels();
             return;
         }
         else if (enemiesDefeated < 60)
         {
             RecalculateEnemyLevels(0, 2);
-            RecalculateSpawnTimer(5, 9);
+            RecalculateSpawnTimer(4, 8);
             UpdateEnemyLevels();
             return;
         }
         else if (enemiesDefeated < 100)
         {
             RecalculateEnemyLevels(0, 3);
-            RecalculateSpawnTimer(5, 9);
+            RecalculateSpawnTimer(4, 8);
             UpdateEnemyLevels();
             return;
         }
         else if (enemiesDefeated < 150)
         {
             RecalculateEnemyLevels(0, 3);
-            RecalculateSpawnTimer(4, 8);
+            RecalculateSpawnTimer(4, 7);
             UpdateEnemyLevels();
             return;
         }

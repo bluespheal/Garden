@@ -210,6 +210,17 @@
                 },
                 {
                     "name": "",
+                    "id": "16fa3274-5782-4009-b0ec-c6ae8d8b96ec",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d7dd2230-1575-4dc3-bb63-b55b1ec8bfbc",
                     "path": "<Keyboard>/z",
                     "interactions": "",
@@ -234,6 +245,39 @@
                     "name": "",
                     "id": "96604dcf-7e06-4cdb-b1dd-15e8975d7e71",
                     "path": "<SwitchProControllerHID>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "f4f5d8a1-beb0-44c3-88a7-8106b0560e79",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d450aa8e-ba6d-46ea-b788-fa488d9925b0",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Slide",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "09b1a190-8e42-4c7e-92c7-3297e87d363d",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
